@@ -16,15 +16,18 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <ColorInput className={styles.colorInput} autoFocus {...colorInput} pattern={VALID_HEX_COLOR_PATTERN} />
+      <div className={styles.colorItem} style={{ background: colorInput.value }}>
+        <ColorInput className={styles.colorInput} autoFocus {...colorInput} pattern={VALID_HEX_COLOR_PATTERN} />
 
-      <ColorChart color={colorInput.value} />
-
-      <span>Hue: {hue}</span>
-      <span>Saturation: {saturation}</span>
-      <span>Lightness: {lightness}</span>
-      <hr />
-
+        <div className={styles.colorAttributes}>
+          <ColorChart color={colorInput.value} />
+          <ul>
+            <li>Hue: {hue}</li>
+            <li>Sat.: {saturation}</li>
+            <li>Light.: {lightness}</li>
+          </ul>
+        </div>
+      </div>
       <ColorReference />
     </div>
   );

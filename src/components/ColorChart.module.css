@@ -1,32 +1,27 @@
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.content {
+.container {
   display: inline-grid;
   grid-auto-flow: column;
-  gap: var(--space-xs);
-  padding: var(--space-s);
+  gap: 4px;
+  padding: 8px;
 }
 
 .bar {
   position: relative;
-  height: 100%;
+  height: 4rem;
+  width: 1rem;
   overflow: hidden;
-  border-radius: 16px;
-  background: #777;
+  border-radius: 0.5rem;
+  border: 1px solid var(--background-color);
 }
 
 .value {
   display: block;
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: -1px;
+  right: 0;
   height: 0;
-  background: #ddd;
-  transition: height 150ms ease-in-out;
+  background: var(--background-color);
+  will-change: height;
+  transition: height 600ms;
 }
