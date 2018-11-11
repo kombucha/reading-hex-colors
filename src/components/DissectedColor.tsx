@@ -15,7 +15,7 @@ interface ColorComponentProps {
 const ColorComponent: React.SFC<ColorComponentProps> = ({ value, part }) => {
   return (
     <div className={styles.componentContainer}>
-      <span className={styles.componentValue}>{value.toString(16)}</span>
+      <span className={styles.componentValue}>{value.toString(16).padStart(2, "0")}</span>
       <span className={styles.componentPart}>{part}</span>
     </div>
   );
