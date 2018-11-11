@@ -12,7 +12,7 @@ export const COLOR_MAP = [
   { name: "magenta", value: "#f0f" },
   { name: "rose", value: "#f07" }
 ];
-const WHITE = { name: "WHITE", value: "#fff" };
+const WHITE = { name: "white", value: "#fff" };
 const BLACK = { name: "black", value: "000" };
 
 export const VALID_HEX_COLOR_PATTERN = "^#?(?:[a-fA-F0-9]{3}|[a-fA-F0-9]{6})$";
