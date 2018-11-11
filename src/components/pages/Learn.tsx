@@ -14,6 +14,9 @@ import Section from "../Section";
 import styles from "./Learn.module.css";
 import Card from "../base/Card";
 import InlineColor from "../InlineColor";
+import Slider from "../Slider";
+import LightnessWidget from "../LightnessWidget";
+import SaturationWidget from "../SaturationWidget";
 
 type Props = RouteComponentProps;
 
@@ -143,11 +146,7 @@ function Learn(_props: Props) {
               Somewhere in the middle? Than it's <em>medium</em>.
             </p>
           }
-          widget={
-            <Card>
-              Lightness: <em>{lightness}</em>
-            </Card>
-          }
+          widget={<LightnessWidget color={colorInput.value} />}
         />
 
         <Section
@@ -173,11 +172,7 @@ function Learn(_props: Props) {
               </p>
             </>
           }
-          widget={
-            <Card>
-              Saturation: <em>{saturation}</em>
-            </Card>
-          }
+          widget={<SaturationWidget color={colorInput.value} />}
         />
 
         <Section
