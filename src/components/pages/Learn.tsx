@@ -4,10 +4,10 @@ import { RouteComponentProps } from "@reach/router";
 import { VALID_HEX_COLOR_PATTERN, mapToHue, mapToLightness, mapToSaturation } from "../../utils";
 import useInput from "../../hooks/useInput";
 import ColorChart from "../ColorChart";
-import ColorInput from "../LargeInput";
+import ColorInput from "../base/LargeInput";
 import ColorWheel from "../ColorWheel";
 import DissectedColor from "../DissectedColor";
-import ExternalLink from "../ExternalLink";
+import ExternalLink from "../base/ExternalLink";
 
 import styles from "./Learn.module.css";
 
