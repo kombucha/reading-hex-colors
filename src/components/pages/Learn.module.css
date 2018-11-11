@@ -10,20 +10,3 @@
 .colorInput {
   margin: var(--space-m) 0;
 }
-
-.section {
-  margin-bottom: var(--space-l);
-}
-
-.sectionTitle {
-  font-size: var(--font-size-l);
-  font-weight: 600;
-  margin-bottom: var(--space-m);
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.48);
-}
-
-.sectionWidget {
-  display: flex;
-  justify-content: center;
-  margin: var(--space-m);
-}

@@ -9,6 +9,7 @@
   --space-m: 16px;
   --space-l: 32px;
 
+  --font-size-base: 16px;
   --font-size-l: 2rem;
   --font-size-xl: 4rem;
 }
@@ -18,6 +19,7 @@ body {
   font-family: arial, sans-serif;
   background: var(--background-color);
   color: var(--text-color);
+  font-size: var(--font-size-base);
   line-height: 1.5;
 }
 
@@ -29,4 +31,16 @@ hr {
   display: block;
   width: 100%;
   border: 1px dashed var(--text-muted-color);
+}
+
+p {
+  margin-bottom: var(--space-s);
+}
+
+b {
+  font-weight: 600;
+}
+
+code {
+  font-family: monospace;
 }

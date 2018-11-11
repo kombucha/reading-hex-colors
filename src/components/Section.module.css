@@ -1,0 +1,16 @@
+.section {
+  margin-bottom: var(--space-l);
+}
+
+.title {
+  font-size: var(--font-size-l);
+  font-weight: 600;
+  margin-bottom: var(--space-m);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.48);
+}
+
+.widget {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-m);
+}

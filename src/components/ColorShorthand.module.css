@@ -1,0 +1,13 @@
+.container {
+  white-space: nowrap;
+}
+
+.letter {
+  text-transform: uppercase;
+  font-size: var(--font-size-l);
+}
+
+.letter:nth-child(odd) {
+  color: var(--text-muted-color);
+  margin-right: 0.5rem;
+}
