@@ -11,7 +11,7 @@ interface Props {
 function ColorReference({ size = 400 }: Props) {
   const [viewColorName, setViewedColorName] = useState("");
 
-  const chartSize = size / 6;
+  const chartSize = Math.round(size / 6);
   const r = (size - chartSize) / 2;
   const offset = r;
   const thetaOffset = -Math.PI / 2;
@@ -24,8 +24,8 @@ function ColorReference({ size = 400 }: Props) {
       <ul className={styles.list} style={containerStyle}>
         {COLOR_MAP.map((color, idx) => {
           const theta = thetaOffset + idx * thetaSlices;
-          const top = offset + r * Math.sin(theta);
-          const left = offset + r * Math.cos(theta);
+          const top = Math.round(offset + r * Math.sin(theta));
+          const left = Math.round(offset + r * Math.cos(theta));
           const style = { top, left, width: chartSize, height: chartSize };
 
           const setColor = () => setViewedColorName(color.name);
