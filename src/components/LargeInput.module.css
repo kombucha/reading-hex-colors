@@ -1,0 +1,24 @@
+.input {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: var(--space-s) var(--space-m);
+  color: var(--text-color);
+  font-size: 3rem;
+  border-bottom: 1px solid var(--text-muted-color);
+  outline: 0;
+  transition: border-color 150ms ease-in;
+}
+
+.input:focus,
+.input:hover {
+  border-color: var(--text-color);
+}
+
+.input:invalid {
+  border-color: var(--text-error-color);
+}
+
+.input .input::placeholder {
+  color: var(--text-muted-color);
+}

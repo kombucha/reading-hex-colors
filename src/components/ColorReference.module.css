@@ -4,7 +4,7 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 16px;
+  grid-gap: var(--space-m);
 }
 
 .item {
@@ -15,5 +15,5 @@
 
 .itemDescription {
   display: flex;
-  margin-bottom: 8px;
+  margin-bottom: var(--space-s);
 }

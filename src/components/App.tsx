@@ -1,10 +1,12 @@
 import React from "react";
 
 import useInput from "../hooks/useInput";
-import { mapToHue, mapToLightness, mapToSaturation } from "../utils";
-import ColorSquare from "./ColorSquare";
+import { mapToHue, mapToLightness, mapToSaturation, VALID_HEX_COLOR_PATTERN } from "../utils";
 import ColorChart from "./ColorChart";
+import ColorInput from "./LargeInput";
 import ColorReference from "./ColorReference";
+import ColorSquare from "./ColorSquare";
+
 import styles from "./App.module.css";
 
 function App() {
@@ -15,10 +17,7 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <label>
-        Color:
-        <input {...colorInput} />
-      </label>
+      <ColorInput className={styles.colorInput} autoFocus {...colorInput} pattern={VALID_HEX_COLOR_PATTERN} />
 
       <ColorSquare color={colorInput.value} />
       <ColorChart color={colorInput.value} />

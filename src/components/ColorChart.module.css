@@ -1,15 +1,15 @@
 .container {
   display: inline-grid;
   grid-auto-flow: column;
-  gap: 4px;
-  padding: 8px;
-  background: #444;
+  min-height: 100px;
+  min-width: 100px;
+  gap: var(--space-xs);
+  padding: var(--space-s);
 }
 
 .bar {
   position: relative;
-  height: 100px;
-  width: 32px;
+  height: 100%;
   overflow: hidden;
   border-radius: 16px;
   background: #777;
