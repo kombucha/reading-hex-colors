@@ -1,0 +1,32 @@
+.text {
+  display: inline-block;
+  position: relative;
+
+  white-space: nowrap;
+  padding: 1.5rem;
+
+  animation: overlap-animation 2s;
+}
+
+.textShadow {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+
+  display: block;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.char {
+  mix-blend-mode: multiply;
+}
+
+@keyframes overlap-animation {
+  0% {
+    letter-spacing: -1.5rem;
+  }
+  100% {
+    letter-spacing: initial;
+  }
+}
