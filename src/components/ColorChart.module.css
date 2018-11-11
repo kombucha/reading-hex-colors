@@ -1,4 +1,11 @@
-.container {
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.content {
   display: inline-grid;
   grid-auto-flow: column;
   gap: var(--space-xs);
@@ -21,4 +28,5 @@
   width: 100%;
   height: 0;
   background: #ddd;
+  transition: height 150ms ease-in-out;
 }
