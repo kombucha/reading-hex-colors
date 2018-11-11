@@ -1,4 +1,4 @@
-import memoizeOne from "memoize-one";
+import mem from "mem";
 
 export const COLOR_MAP = [
   { name: "red", value: "#f00" },
@@ -19,7 +19,7 @@ const BLACK = { name: "black", value: "000" };
 
 export const VALID_HEX_COLOR_PATTERN = "^#?(?:[a-fA-F0-9]{3}|[a-fA-F0-9]{6})$";
 
-export const parseHexColor = memoizeOne(function parseHexColor(hexColor: string, simplified = false) {
+export const parseHexColor = mem(function parseHexColor(hexColor: string, simplified = false) {
   if (hexColor.startsWith("#")) {
     hexColor = hexColor.slice(1);
   }
