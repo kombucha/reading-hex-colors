@@ -1,3 +1,5 @@
+import memoizeOne from "memoize-one";
+
 export const COLOR_MAP = [
   { name: "red", value: "#f00" },
   { name: "orange", value: "#f70" },
@@ -17,7 +19,7 @@ const BLACK = { name: "black", value: "000" };
 
 export const VALID_HEX_COLOR_PATTERN = "^#?(?:[a-fA-F0-9]{3}|[a-fA-F0-9]{6})$";
 
-export function parseHexColor(hexColor: string, simplified = false) {
+export const parseHexColor = memoizeOne(function parseHexColor(hexColor: string, simplified = false) {
   if (hexColor.startsWith("#")) {
     hexColor = hexColor.slice(1);
   }
@@ -33,7 +35,7 @@ export function parseHexColor(hexColor: string, simplified = false) {
     default:
       return [0, 0, 0];
   }
-}
+});
 
 export function asPercentage(rgbComponent: number) {
   return `${(rgbComponent / 255) * 100}%`;
