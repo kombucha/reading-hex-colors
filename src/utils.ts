@@ -58,7 +58,7 @@ export function mapToHue(hexColor: string) {
     return colorComponents.reduce((sum, c, idx) => sum + (c - parsedColor[idx]) ** 2, 0) / colorComponents.length;
   });
 
-  const indexOfMin = COLOR_MAP.reduce((res, current, idx) => {
+  const indexOfMin = COLOR_MAP.reduce((res, _current, idx) => {
     return errors[idx] < errors[res] ? idx : res;
   }, 0);
 
