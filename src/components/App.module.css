@@ -3,8 +3,10 @@
   grid-auto-flow: row;
   justify-items: center;
   gap: var(--space-m);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .colorInput {
-  margin: var(--space-m);
+  margin: var(--space-m) 0;
 }
