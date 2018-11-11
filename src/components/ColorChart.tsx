@@ -10,7 +10,7 @@ interface Props {
 }
 
 function computeInscribedSquareSize(d: number) {
-  return (d ** 2 / 2) ** 0.5;
+  return Math.floor((d ** 2 / 2) ** 0.5);
 }
 
 function ColorChart({ color, size = 100, showBackground = true }: Props) {
