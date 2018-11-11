@@ -1,9 +1,25 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .list {
-  position: relative;
+  position: absolute;
   list-style: none;
   margin: 0;
 }
 
 .item {
   position: absolute;
+  cursor: help;
+  transition: transform 150ms ease-in-out;
+}
+
+.item:hover {
+  transform: scale(1.2);
+}
+
+.colorLabel {
+  font-size: 2rem;
 }
