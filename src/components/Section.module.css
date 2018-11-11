@@ -1,7 +1,3 @@
-.section {
-  margin-bottom: var(--space-l);
-}
-
 .title {
   font-size: var(--font-size-l);
   font-weight: 600;

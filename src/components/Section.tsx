@@ -10,7 +10,7 @@ interface Props {
 
 const Section: React.SFC<Props> = ({ title, description, widget }) => {
   return (
-    <div className={styles.section}>
+    <div>
       <h2 className={styles.title}>{title}</h2>
       <>{description}</>
       {widget && <div className={styles.widget}>{widget}</div>}

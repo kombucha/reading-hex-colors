@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-auto-flow: row;
-  gap: var(--space-m);
+  grid-gap: var(--space-l);
   max-width: 600px;
   margin: 0 auto;
   padding: var(--space-m);
