@@ -17,11 +17,7 @@ import InlineColor from "../InlineColor";
 
 type Props = RouteComponentProps;
 
-const formatSingleDigitComponent = (component: number) =>
-  component
-    .toString(16)
-    .slice(1)
-    .toUpperCase();
+const formatSingleDigitComponent = (component: number) => component.toString(16)[0].toUpperCase();
 
 function Learn(_props: Props) {
   const colorInput = useInput("#AA22DD");
