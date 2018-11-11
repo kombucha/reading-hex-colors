@@ -9,3 +9,19 @@
 .colorInput {
   margin: var(--space-m) 0;
 }
+
+.section {
+  margin-bottom: var(--space-l);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-l);
+  font-weight: 600;
+  margin-bottom: var(--space-m);
+}
+
+.sectionWidget {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-m);
+}

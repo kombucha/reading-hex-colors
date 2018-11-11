@@ -8,7 +8,7 @@
 }
 
 .title {
-  font-size: 5rem;
+  font-size: var(--font-size-xl);
   margin-bottom: 5vh;
 }
 

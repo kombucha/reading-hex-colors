@@ -4,7 +4,7 @@
   background: none;
   padding: var(--space-s) var(--space-m);
   color: var(--text-color);
-  font-size: 3rem;
+  font-size: var(--font-size-l);
   border-bottom: 1px solid var(--text-muted-color);
   outline: 0;
   transition: border-color 150ms ease-in;
