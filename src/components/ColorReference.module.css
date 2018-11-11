@@ -3,16 +3,43 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--space-m);
+  grid-template-columns: 1fr;
 }
 
 .item {
+  border-radius: 50%;
+  margin: 3rem auto;
+  width: 235px;
+  height: 220px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  box-shadow: 0px 0px 35px 13px rgba(0, 0, 0, 0.6);
 }
 
-.itemName {
-  margin-bottom: var(--space-s);
+.itemDescription {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #000;
+  margin: 3rem 0 1.5rem;
+  text-align: center;
+}
+
+@media (min-width: 620px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 980px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1300px) {
+  .list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

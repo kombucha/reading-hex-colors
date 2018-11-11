@@ -7,12 +7,13 @@ import styles from "./ColorReference.module.css";
 function ColorReference() {
   return (
     <ul className={styles.list}>
-      {COLOR_MAP.map(c => (
-        <li className={styles.item} key={c.value}>
-          <div className={styles.itemName}>
-            {c.name} ({c.value})
+      {COLOR_MAP.map(color => (
+        <li className={styles.item} key={color.value} style={{ background: color.value }}>
+          <div className={styles.itemDescription}>
+            {color.name}
+            <br />({color.value})
           </div>
-          <ColorChart color={c.value} />
+          <ColorChart color={color.value} />
         </li>
       ))}
     </ul>

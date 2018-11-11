@@ -1,6 +1,6 @@
 :root {
-  --background-color: #444;
-  --text-color: #fff;
+  --background-color: #1c1c1c;
+  --text-color: #000;
   --text-muted-color: #888;
   --text-error-color: #d44;
 
@@ -19,10 +19,4 @@ body {
 
 * {
   box-sizing: border-box !important;
-}
-
-hr {
-  display: block;
-  width: 100%;
-  border: 1px dashed var(--text-muted-color);
 }
