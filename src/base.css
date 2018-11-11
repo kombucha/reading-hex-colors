@@ -37,8 +37,9 @@ p {
   margin-bottom: var(--space-s);
 }
 
-b {
-  font-weight: 600;
+b,
+em {
+  font-weight: 800;
 }
 
 code {

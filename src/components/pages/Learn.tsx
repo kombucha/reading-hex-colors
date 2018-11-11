@@ -12,8 +12,15 @@ import ExternalLink from "../base/ExternalLink";
 import Section from "../Section";
 
 import styles from "./Learn.module.css";
+import Card from "../base/Card";
 
 type Props = RouteComponentProps;
+
+const formatSingleDigitComponent = (component: number) =>
+  component
+    .toString(16)
+    .slice(1)
+    .toUpperCase();
 
 function Learn(_props: Props) {
   const colorInput = useInput("#AA22DD");
@@ -28,15 +35,15 @@ function Learn(_props: Props) {
         <Section
           title="Goal"
           description={
-            <p>
-              The goal of this exercise is to learn how to read hex color and have a good enough approximation mental
-              representation. Hex color representation is meant to be understood by computers, but it is possible to
-              build an intuition around it. The content of this page is based on the awesome talk{" "}
-              <ExternalLink href="https://desandro.com">David DeSandro</ExternalLink> gave at dotCSS 2018.
-              <br />
-              <br />
-              Let's start !
-            </p>
+            <>
+              <p>
+                The goal of this exercise is to learn how to read hex color and have a good enough approximation mental
+                representation. Hex color representation is meant to be understood by computers, but it is possible to
+                build an intuition around it. The content of this page is based on the awesome talk{" "}
+                <ExternalLink href="https://desandro.com">David DeSandro</ExternalLink> gave at dotCSS 2018.
+              </p>
+              <p>Let's start !</p>
+            </>
           }
         />
 
@@ -117,7 +124,7 @@ function Learn(_props: Props) {
                 base colors is now easy task, but it is doable with repetition :).
               </p>
               <p>
-                For the current color, the closest matching hue is <b>{hue.name}</b>.
+                For the current color, the closest matching hue is <em>{hue.name}</em>.
               </p>
             </>
           }
@@ -126,14 +133,74 @@ function Learn(_props: Props) {
 
         <Section
           title="Step 4: Get the light from the total"
-          description={"todo"}
-          widget={<span>Lightness: {lightness}</span>}
+          description={
+            <p>
+              To get the lightness of the colors, you must sum the components of the color. If it's close to 0, then
+              it's a <em>dark</em> color. Close to the maximum possible value? Then it's a <em>light</em> color.
+              Somewhere in the middle? Than it's <em>medium</em>.
+            </p>
+          }
+          widget={
+            <Card>
+              Lightness: <em>{lightness}</em>
+            </Card>
+          }
         />
 
         <Section
           title="Step 5: Get the saturation from the range"
-          description={"todo"}
-          widget={<span>Saturation: {saturation}</span>}
+          description={
+            <>
+              <p>
+                Finally to get the saturation, you have to estimate the <em>range</em> of the color. To do that, take
+                the biggest value and the smallest value. For example, in the current example the biggest value is{" "}
+                <em>{formatSingleDigitComponent(Math.max(r, g, b))}</em> and the smallest value is{" "}
+                <em>{formatSingleDigitComponent(Math.min(r, g, b))}</em>.
+              </p>
+              <p>
+                If that range is small, then you have a desaturated color. A special case is when all three components
+                are equal or really close, then it's a grey color.
+              </p>
+              <p>
+                If the range is large, then the color is <em>saturated</em>.
+              </p>
+              <p>
+                Finally, if the range is somewhere in between then you're faced with a <em>washed</em> or <em>muted</em>
+                color.
+              </p>
+            </>
+          }
+          widget={
+            <Card>
+              Saturation: <em>{saturation}</em>
+            </Card>
+          }
+        />
+
+        <Section
+          title="Profit !"
+          description={
+            <>
+              <p className={styles.profitText}>
+                <em>{colorInput.value}</em> is a{" "}
+                <em>
+                  {saturation} {lightness} {hue.name}
+                </em>
+                . 🎉🎉🎉
+              </p>
+              <div style={{ width: "100%", height: 0, paddingBottom: "57%", position: "relative" }}>
+                <iframe
+                  src="https://giphy.com/embed/Is1O1TWV0LEJi"
+                  width="100%"
+                  height="100%"
+                  style={{ position: "absolute" }}
+                  frameBorder="0"
+                  className="giphy-embed"
+                  allowFullScreen
+                />
+              </div>
+            </>
+          }
         />
       </div>
     </>
