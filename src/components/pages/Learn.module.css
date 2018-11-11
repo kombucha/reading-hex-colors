@@ -4,9 +4,13 @@
   gap: var(--space-m);
   max-width: 600px;
   margin: 0 auto;
-  padding: 0 var(--space-m);
+  padding: var(--space-m);
 }
 
-.colorInput {
-  margin: var(--space-m) 0;
+.inputContainer {
+  position: sticky;
+  top: 0;
+  background: var(--background-color);
+  padding: var(--space-m) 0;
+  z-index: 2;
 }

@@ -4,7 +4,7 @@ import { RouteComponentProps } from "@reach/router";
 import { VALID_HEX_COLOR_PATTERN, mapToHue, mapToLightness, mapToSaturation, parseHexColor } from "../../utils";
 import useInput from "../../hooks/useInput";
 import ColorChart from "../ColorChart";
-import ColorInput from "../base/LargeInput";
+import LargeInput from "../base/LargeInput";
 import ColorShorthand from "../ColorShorthand";
 import ColorWheel from "../ColorWheel";
 import DissectedColor from "../DissectedColor";
@@ -40,7 +40,9 @@ function Learn(_props: Props) {
           }
         />
 
-        <ColorInput className={styles.colorInput} autoFocus {...colorInput} pattern={VALID_HEX_COLOR_PATTERN} />
+        <div className={styles.inputContainer}>
+          <LargeInput {...colorInput} autoFocus pattern={VALID_HEX_COLOR_PATTERN} />
+        </div>
 
         <Section
           title="Anatomy of an hex color"

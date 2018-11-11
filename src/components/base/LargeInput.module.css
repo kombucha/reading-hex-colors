@@ -8,6 +8,7 @@
   border-bottom: 1px solid var(--text-muted-color);
   outline: 0;
   transition: border-color 150ms ease-in;
+  width: 100%;
 }
 
 .input:focus,
