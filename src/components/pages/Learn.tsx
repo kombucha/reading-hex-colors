@@ -58,8 +58,8 @@ function Learn(_props: Props) {
               <p>
                 An hex color string is the concatenation of 3 numbers represented in{" "}
                 <ExternalLink href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</ExternalLink> or base 16. We
-                usually count in base 10 with numbers ranging from 0 to 9 before incrementing. Hexadecimal numbers on
-                the other hand go like this : <code>0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - A - B - C - D - E - F</code>
+                usually count in base 10 with numbers ranging from 0 to 9. Hexadecimal numbers on the other hand go like
+                this : <code>0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - A - B - C - D - E - F</code>
                 .
                 <br />
               </p>
@@ -77,9 +77,9 @@ function Learn(_props: Props) {
           description={
             <>
               <p>
-                To simplify or task, let's only consider the the first number of each group. This is known as the
+                To simplify our task, let's only consider the the first number of each group. This is known as the
                 shorthand notation and is a valid color representation in browsers for example. When the browser
-                encounter a color in shorthand form, it will expand it by doubling each digit.
+                encounters a color in shorthand form, it will expand it by doubling each digit.
                 <br />
                 eg. <code>#34d</code> will expand to <code>#3344dd</code>
               </p>
@@ -109,14 +109,18 @@ function Learn(_props: Props) {
           description={
             <>
               <p>
-                From that shape, the goal is now to associate it with a base hue or color. Represented below are 12
-                colors. 3 of them are what is called the{" "}
+                From that shape, the goal is now to associate it with a base{" "}
+                <ExternalLink href="https://en.wikipedia.org/wiki/Hue">hue</ExternalLink> or color. Represented below
+                are 12 colors in a circle.
+                <br />3 of them are what is called the{" "}
                 <ExternalLink href="https://simple.wikipedia.org/wiki/Primary_color">primary colors</ExternalLink>. In
-                our case, that is Red, Green and Blue. From those colors, we can get 3 other colors called{" "}
+                our case, that is Red, Green and Blue.
+                <br /> From those colors, we can get 3 other colors called the{" "}
                 <ExternalLink href="https://en.wikipedia.org/wiki/Secondary_color">secondary colors</ExternalLink>.
                 Secondary colors are obtained by mixing two primary colors. Yellow for example (<code>#FF0</code>) is a
                 mix of red and green. Finally, we can get 6 extra colors by mixing a primary with a secondary. Those are
-                called <ExternalLink href="https://en.wikipedia.org/wiki/Tertiary_color">tertiary colors</ExternalLink>.
+                called the{" "}
+                <ExternalLink href="https://en.wikipedia.org/wiki/Tertiary_color">tertiary colors</ExternalLink>.
               </p>
               <p>
                 Those 12 colors will give you a good base when identifying a color. The goal here is to associate the
