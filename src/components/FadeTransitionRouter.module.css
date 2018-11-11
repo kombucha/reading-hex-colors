@@ -1,9 +1,28 @@
-.fadeEnter {
+.enter {
   opacity: 0;
   z-index: 1;
 }
 
-.fadeEnterActive {
+.enterActive {
   opacity: 1;
-  transition: opacity 200ms ease-in;
+  transition: opacity 350ms ease-in;
+}
+
+.exit {
+  opacity: 1;
+}
+
+.exitActive {
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 350ms ease-in;
+}
+
+.enter,
+.exit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }

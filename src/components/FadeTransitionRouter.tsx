@@ -4,13 +4,11 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import styles from "./FadeTransitionRouter.module.css";
 
-const classNames = { enter: styles.fadeEnter, enterActive: styles.fadeEnterActive };
-
 const FadeTransitionRouter: React.SFC = ({ children }) => (
   <Location>
     {({ location }) => (
       <TransitionGroup>
-        <CSSTransition key={location.key} classNames={classNames} timeout={200}>
+        <CSSTransition key={location.key} classNames={styles} timeout={350} exit={true}>
           <Router location={location}>{children}</Router>
         </CSSTransition>
       </TransitionGroup>
