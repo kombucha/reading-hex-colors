@@ -15,12 +15,7 @@ export const COLOR_MAP = [
 const WHITE = { name: "WHITE", value: "#fff" };
 const BLACK = { name: "black", value: "000" };
 
-/**
- * @param {string} hexColor
- * @param {boolean} [simplified]
- * @returns {number[]} [red, green, blue] where each item is a number between 0 and 255
- */
-export function parseHexColor(hexColor, simplified = false) {
+export function parseHexColor(hexColor: string, simplified = false) {
   if (hexColor.startsWith("#")) {
     hexColor = hexColor.slice(1);
   }
@@ -38,15 +33,11 @@ export function parseHexColor(hexColor, simplified = false) {
   }
 }
 
-/**
- * @param {number} num - A number between 0 and 255
- * @returns {string}
- */
-export function asPercentage(num) {
-  return `${(num / 255) * 100}%`;
+export function asPercentage(rgbComponent: number) {
+  return `${(rgbComponent / 255) * 100}%`;
 }
 
-export function mapToHue(hexColor) {
+export function mapToHue(hexColor: string) {
   const colorComponents = parseHexColor(hexColor, true);
 
   if (colorComponents.every(c => c === 255)) {
@@ -62,12 +53,7 @@ export function mapToHue(hexColor) {
 
   const errors = COLOR_MAP.map(color => {
     const parsedColor = parseHexColor(color.value);
-    return (
-      colorComponents.reduce(
-        (sum, c, idx) => sum + (c - parsedColor[idx]) ** 2,
-        0
-      ) / colorComponents.length
-    );
+    return colorComponents.reduce((sum, c, idx) => sum + (c - parsedColor[idx]) ** 2, 0) / colorComponents.length;
   });
 
   const indexOfMin = COLOR_MAP.reduce((res, current, idx) => {
@@ -77,10 +63,9 @@ export function mapToHue(hexColor) {
   return COLOR_MAP[indexOfMin];
 }
 
-export function mapToSaturation(hexColor) {
+export function mapToSaturation(hexColor: string) {
   const normalizedComponents = parseHexColor(hexColor, true).map(c => c / 255);
-  const diff =
-    Math.max(...normalizedComponents) - Math.min(...normalizedComponents);
+  const diff = Math.max(...normalizedComponents) - Math.min(...normalizedComponents);
 
   if (diff === 0) {
     return "monochrome";
@@ -93,7 +78,7 @@ export function mapToSaturation(hexColor) {
   return "saturated";
 }
 
-export function mapToLightness(hexColor) {
+export function mapToLightness(hexColor: string) {
   const normalizedComponents = parseHexColor(hexColor, true).map(c => c / 255);
   const sum = normalizedComponents.reduce((acc, val) => acc + val);
 
@@ -106,12 +91,7 @@ export function mapToLightness(hexColor) {
   return "light";
 }
 
-/**
- * @param {Array} arr
- * @param {number} chunkSize
- * @returns {Array}
- */
-function chunk(arr, chunkSize = 1) {
+function chunk<T>(arr: Array<T>, chunkSize = 1) {
   const result = [];
   let i = 0;
 
