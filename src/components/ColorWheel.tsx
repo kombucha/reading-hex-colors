@@ -1,15 +1,17 @@
 import React, { useState } from "react";
+import cn from "classnames";
 
 import { COLOR_MAP } from "../utils";
 import ColorChart from "./ColorChart";
-import styles from "./ColorReference.module.css";
+import styles from "./ColorWheel.module.css";
 
 interface Props {
   size?: number;
+  selectedColor?: string;
 }
 
-function ColorReference({ size = 400 }: Props) {
-  const [viewColorName, setViewedColorName] = useState("");
+function ColorWheel({ size = 400, selectedColor = "" }: Props) {
+  const [hoveredColor, setHoveredColor] = useState("");
 
   const chartSize = Math.round(size / 6);
   const r = (size - chartSize) / 2;
@@ -18,6 +20,7 @@ function ColorReference({ size = 400 }: Props) {
   const thetaSlices = (2 * Math.PI) / COLOR_MAP.length;
 
   const containerStyle = { width: size, height: size };
+  const highlightedColor = hoveredColor || selectedColor;
 
   return (
     <div className={styles.wrapper} style={containerStyle}>
@@ -27,20 +30,21 @@ function ColorReference({ size = 400 }: Props) {
           const top = Math.round(offset + r * Math.sin(theta));
           const left = Math.round(offset + r * Math.cos(theta));
           const style = { top, left, width: chartSize, height: chartSize };
+          const className = cn(styles.item, highlightedColor === color.name && styles.itemHightlighted);
 
-          const setColor = () => setViewedColorName(color.name);
-          const unsetColor = () => setViewedColorName("");
+          const setColor = () => setHoveredColor(color.name);
+          const unsetColor = () => setHoveredColor("");
 
           return (
-            <li className={styles.item} key={color.value} style={style} onMouseOver={setColor} onMouseOut={unsetColor}>
+            <li className={className} key={color.value} style={style} onMouseOver={setColor} onMouseOut={unsetColor}>
               <ColorChart color={color.value} size={chartSize} />
             </li>
           );
         })}
       </ul>
-      {viewColorName && <span className={styles.colorLabel}>{viewColorName}</span>}
+      {highlightedColor && <span className={styles.colorLabel}>{highlightedColor}</span>}
     </div>
   );
 }
 
-export default ColorReference;
+export default ColorWheel;

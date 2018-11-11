@@ -4,7 +4,7 @@ import useInput from "../hooks/useInput";
 import { mapToHue, mapToLightness, mapToSaturation, VALID_HEX_COLOR_PATTERN } from "../utils";
 import ColorChart from "./ColorChart";
 import ColorInput from "./LargeInput";
-import ColorReference from "./ColorReference";
+import ColorWheel from "./ColorWheel";
 
 import styles from "./App.module.css";
 
@@ -25,7 +25,7 @@ function App() {
       <span>Lightness: {lightness}</span>
       <hr />
 
-      <ColorReference />
+      <ColorWheel />
     </div>
   );
 }

@@ -16,8 +16,8 @@
   transition: transform 150ms ease-in-out;
 }
 
-.item:hover {
-  transform: scale(1.2);
+.itemHightlighted {
+  transform: scale(1.5);
 }
 
 .colorLabel {
