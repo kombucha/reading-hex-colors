@@ -9,7 +9,7 @@
 
 .title {
   font-size: var(--font-size-xl);
-  margin-bottom: 5vh;
+  margin-bottom: var(--space-xl);
 }
 
 .list {
@@ -21,12 +21,14 @@
   display: inline-block;
   font-size: 3rem;
   cursor: pointer;
-  transition: transform 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
   margin-bottom: var(--space-m);
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.48);
 }
 
 .link:hover {
   transform: scale(1.2);
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.72);
 }
 
 .link,
