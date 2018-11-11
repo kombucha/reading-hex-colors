@@ -16,14 +16,14 @@ function Home(_props: Props) {
       <ul className={styles.list}>
         <li>
           <Link className={styles.link} to="learn">
-            Learn
+            Learn more
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link className={styles.link} to="train">
             Train
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
