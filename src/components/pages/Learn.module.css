@@ -1,7 +1,6 @@
 .container {
   display: grid;
   grid-auto-flow: row;
-  justify-items: center;
   gap: var(--space-m);
   max-width: 600px;
   margin: 0 auto;
