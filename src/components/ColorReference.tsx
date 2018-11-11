@@ -3,13 +3,14 @@ import React from "react";
 import { COLOR_MAP } from "../utils";
 import ColorSquare from "./ColorSquare";
 import ColorChart from "./ColorChart";
+import styles from "./ColorReference.module.css";
 
 function ColorReference() {
   return (
-    <ul className="Reference">
+    <ul className={styles.list}>
       {COLOR_MAP.map(c => (
-        <li className="Reference_item">
-          <div className="Reference_description">
+        <li className={styles.item} key={c.value}>
+          <div className={styles.itemDescription}>
             <span>
               {c.name} ({c.value}) &nbsp;
             </span>

@@ -1,0 +1,14 @@
+html,
+body {
+  font-family: arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+hr {
+  display: block;
+  width: 100%;
+  border: 1px dashed #888;
+}

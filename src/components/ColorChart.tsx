@@ -1,5 +1,6 @@
 import React from "react";
 
+import styles from "./ColorChart.module.css";
 import { parseHexColor, asPercentage } from "../utils";
 
 interface Props {
@@ -10,10 +11,10 @@ function ColorChart({ color }: Props) {
   const colorRgbComponents = parseHexColor(color);
 
   return (
-    <div className="ColorChart">
+    <div className={styles.container}>
       {colorRgbComponents.map((val, idx) => (
-        <div className="ColorChart_bar" key={idx}>
-          <div className="ColorChart_value" style={{ height: asPercentage(val) }} />
+        <div className={styles.bar} key={idx}>
+          <div className={styles.value} style={{ height: asPercentage(val) }} />
         </div>
       ))}
     </div>

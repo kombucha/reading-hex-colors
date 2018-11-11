@@ -5,6 +5,7 @@ import { mapToHue, mapToLightness, mapToSaturation } from "../utils";
 import ColorSquare from "./ColorSquare";
 import ColorChart from "./ColorChart";
 import ColorReference from "./ColorReference";
+import styles from "./App.module.css";
 
 function App() {
   const colorInput = useInput("#A2D");
@@ -13,7 +14,7 @@ function App() {
   const saturation = mapToSaturation(colorInput.value);
 
   return (
-    <div className="App">
+    <div className={styles.container}>
       <label>
         Color:
         <input {...colorInput} />
