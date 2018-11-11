@@ -13,6 +13,7 @@ import Section from "../Section";
 
 import styles from "./Learn.module.css";
 import Card from "../base/Card";
+import InlineColor from "../InlineColor";
 
 type Props = RouteComponentProps;
 
@@ -81,11 +82,12 @@ function Learn(_props: Props) {
                 shorthand notation and is a valid color representation in browsers for example. When the browser
                 encounters a color in shorthand form, it will expand it by doubling each digit.
                 <br />
-                eg. <code>#34d</code> will expand to <code>#3344dd</code>
+                eg. <InlineColor color="#34d" /> will expand to <InlineColor color="#3344dd" />
               </p>
               <p>
-                Of course we're losing some information by doing this. <code>#F8F0F0</code> and <code>#FFFFFF</code> are
-                not the same colors after all. But in the general case, this is a good enough approximation.
+                Of course we're losing some information by doing this. <InlineColor color="#FFF0F0" /> and{" "}
+                <InlineColor color="#FFFFFF" /> are not the same colors after all. But in the general case, this is a
+                good enough approximation.
               </p>
             </>
           }
@@ -96,9 +98,9 @@ function Learn(_props: Props) {
           title="Step 2: Build a mental chart"
           description={
             <p>
-              You know have 3 digits to play with (red: {r}, green: {g} and blue: {b}). The goal is to build a mental
-              bar chart with 3 bars. Each bar represent a component and it's relative percentage. This will give you the
-              "shape" of the color.
+              You know have 3 digits to play with (red: <code>{r}</code>, green: <code>{g}</code> and blue:{" "}
+              <code>{b}</code>). The goal is to build a mental bar chart with 3 bars. Each bar represent a component and
+              it's relative percentage. This will give you the "shape" of the color.
             </p>
           }
           widget={<ColorChart color={colorInput.value} />}
@@ -186,7 +188,7 @@ function Learn(_props: Props) {
           description={
             <>
               <p className={styles.profitText}>
-                <em>{colorInput.value}</em> is a{" "}
+                <InlineColor color={colorInput.value} /> is a{" "}
                 <em>
                   {saturation} {lightness} {hue.name}
                 </em>
