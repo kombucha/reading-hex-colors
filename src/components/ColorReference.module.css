@@ -1,18 +1,9 @@
 .list {
+  position: relative;
   list-style: none;
   margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--space-m);
 }
 
 .item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.itemName {
-  margin-bottom: var(--space-s);
+  position: absolute;
 }
