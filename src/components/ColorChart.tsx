@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 
 import styles from "./ColorChart.module.css";
 import { parseHexColor, asPercentage } from "../utils";
@@ -14,8 +14,8 @@ function computeInscribedSquareSize(d: number) {
 }
 
 function ColorChart({ color, size = 100, showBackground = true }: Props) {
-  const colorRgbComponents = parseHexColor(color);
-  const contentSize = computeInscribedSquareSize(size);
+  const colorRgbComponents = useMemo(() => parseHexColor(color), [color]);
+  const contentSize = useMemo(() => computeInscribedSquareSize(size), [size]);
 
   const wrapperStyle = { width: size, height: size, background: showBackground ? color : "none" };
   const contentStyle = { width: contentSize, height: contentSize };
