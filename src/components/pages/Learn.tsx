@@ -35,9 +35,9 @@ function Learn(_props: Props) {
           description={
             <>
               <p>
-                The goal of this exercise is to learn how to read hex color and have a good enough mental approximation.
-                Hex color representation is meant to be understood by computers 🤖, but it is possible to build an
-                intuition around it. The content of this page is based on the awesome talk{" "}
+                The goal of this exercise is to learn how to read hex colors and get a good enough mental approximation.
+                Hex colors are meant to be understood by computers 🤖, but it is possible to build an intuition around
+                it. The content of this page is based on the awesome talk{" "}
                 <ExternalLink href="https://desandro.com">David DeSandro</ExternalLink> gave at{" "}
                 <ExternalLink href="https://www.dotcss.io/">dotCSS 2018</ExternalLink>.
               </p>
