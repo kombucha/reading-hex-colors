@@ -12,9 +12,7 @@ import ExternalLink from "../base/ExternalLink";
 import Section from "../Section";
 
 import styles from "./Learn.module.css";
-import Card from "../base/Card";
 import InlineColor from "../InlineColor";
-import Slider from "../base/Slider";
 import LightnessWidget from "../LightnessWidget";
 import SaturationWidget from "../SaturationWidget";
 
@@ -53,11 +51,11 @@ function Learn(_props: Props) {
         </div>
 
         <Section
-          title="Anatomy of an hex color"
+          title="Anatomy of a hex color"
           description={
             <>
               <p>
-                An hex color string is the concatenation of 3 numbers represented in{" "}
+                A hex color string is the concatenation of 3 numbers represented in{" "}
                 <ExternalLink href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</ExternalLink> or base 16. We
                 usually count in base 10 with numbers ranging from 0 to 9. Hexadecimal numbers on the other hand go like
                 this : <code>0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - A - B - C - D - E - F</code>
