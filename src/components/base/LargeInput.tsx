@@ -6,7 +6,7 @@ import styles from "./LargeInput.module.css";
 type Props = React.InputHTMLAttributes<HTMLInputElement>;
 
 function ColorInput({ className, ...rest }: Props) {
-  return <input className={cn(styles.input, className)} placeholder="Enter a color hex code" {...rest} />;
+  return <input className={cn(styles.input, className)} {...rest} />;
 }
 
 export default ColorInput;

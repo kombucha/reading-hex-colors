@@ -101,6 +101,12 @@ export function expandColor(hexColor: string) {
   return `#${r.toString(16).padStart(2, "0")}${g.toString(16).padStart(2, "0")}${b.toString(16).padStart(2, "0")}`;
 }
 
+export function shorthandColor(hexColor: string) {
+  const [r, g, b] = parseHexColor(hexColor);
+
+  return `#${r.toString(16)[0]}${g.toString(16)[0]}${b.toString(16)[0]}`;
+}
+
 function chunk<T>(arr: Array<T>, chunkSize = 1) {
   const result = [];
   let i = 0;

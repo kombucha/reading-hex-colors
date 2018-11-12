@@ -1,8 +1,16 @@
 import React from "react";
 import { RouteComponentProps } from "@reach/router";
 
-import { VALID_HEX_COLOR_PATTERN, mapToHue, mapToLightness, mapToSaturation, parseHexColor } from "../../utils";
-import useInput from "../../hooks/useInput";
+import {
+  VALID_HEX_COLOR_PATTERN,
+  mapToHue,
+  mapToLightness,
+  mapToSaturation,
+  parseHexColor,
+  expandColor,
+  shorthandColor
+} from "../../utils";
+import useColorInput from "../../hooks/useColorInput";
 import ColorChart from "../ColorChart";
 import LargeInput from "../base/LargeInput";
 import ColorShorthand from "../ColorShorthand";
@@ -21,11 +29,14 @@ type Props = RouteComponentProps;
 const formatSingleDigitComponent = (component: number) => component.toString(16)[0].toUpperCase();
 
 function Learn(_props: Props) {
-  const colorInput = useInput("#AA22DD");
-  const [r, g, b] = parseHexColor(colorInput.value);
-  const hue = mapToHue(colorInput.value) || { name: "unknown" };
-  const lightness = mapToLightness(colorInput.value);
-  const saturation = mapToSaturation(colorInput.value);
+  const colorInput = useColorInput("#AA22DD");
+  const expandedValue = expandColor(colorInput.value);
+  const shorthandValue = shorthandColor(colorInput.value);
+
+  const [r, g, b] = parseHexColor(shorthandValue);
+  const hue = mapToHue(shorthandValue) || { name: "unknown" };
+  const lightness = mapToLightness(shorthandValue);
+  const saturation = mapToSaturation(shorthandValue);
 
   return (
     <>
@@ -47,7 +58,14 @@ function Learn(_props: Props) {
         />
 
         <div className={styles.inputContainer}>
-          <LargeInput {...colorInput} autoFocus pattern={VALID_HEX_COLOR_PATTERN} />
+          <LargeInput
+            {...colorInput}
+            autoFocus
+            pattern={VALID_HEX_COLOR_PATTERN}
+            placeholder="#000000"
+            minLength={4}
+            maxLength={7}
+          />
         </div>
 
         <Section
@@ -68,7 +86,7 @@ function Learn(_props: Props) {
               </p>
             </>
           }
-          widget={<DissectedColor color={colorInput.value} />}
+          widget={<DissectedColor color={expandedValue} />}
         />
 
         <Section
@@ -89,7 +107,7 @@ function Learn(_props: Props) {
               </p>
             </>
           }
-          widget={<ColorShorthand color={colorInput.value} />}
+          widget={<ColorShorthand color={expandedValue} />}
         />
 
         <Section
@@ -101,7 +119,7 @@ function Learn(_props: Props) {
               and its relative percentage. This will give you the "shape" of the color.
             </p>
           }
-          widget={<ColorChart color={colorInput.value} />}
+          widget={<ColorChart color={shorthandValue} />}
         />
 
         <Section
@@ -144,7 +162,7 @@ function Learn(_props: Props) {
               Somewhere in the middle? Then it's <em>medium</em>.
             </p>
           }
-          widget={<LightnessWidget color={colorInput.value} />}
+          widget={<LightnessWidget color={shorthandValue} />}
         />
 
         <Section
@@ -169,7 +187,7 @@ function Learn(_props: Props) {
               </p>
             </>
           }
-          widget={<SaturationWidget color={colorInput.value} />}
+          widget={<SaturationWidget color={shorthandValue} />}
         />
 
         <Section
@@ -177,7 +195,7 @@ function Learn(_props: Props) {
           description={
             <>
               <p className={styles.profitText}>
-                <InlineColor color={colorInput.value} /> is a{" "}
+                <InlineColor color={expandedValue} /> is a{" "}
                 <em>
                   {saturation} {lightness} {hue.name}
                 </em>

@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-function useInput(initialValue: any) {
+function useInput<T>(initialValue: T) {
   const [value, setValue] = useState(initialValue);
   const onChange = useCallback(evt => setValue(evt.target.value), []);
 
