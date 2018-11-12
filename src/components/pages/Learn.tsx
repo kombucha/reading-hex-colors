@@ -60,13 +60,14 @@ function Learn(_props: Props) {
                 <ExternalLink href="https://desandro.com">David DeSandro</ExternalLink> gave at{" "}
                 <ExternalLink href="https://www.dotcss.io/">dotCSS 2018</ExternalLink>.
               </p>
-              <p>Let's start!</p>
+              <p>Let's start! Pick a color or chose the default one</p>
             </>
           }
         />
 
-        <div className={styles.inputContainer}>
+        <div className={styles.colorContainer}>
           <LargeInput
+            className={styles.colorInput}
             value={colorInput}
             onChange={onChange}
             autoFocus
@@ -75,6 +76,7 @@ function Learn(_props: Props) {
             minLength={4}
             maxLength={7}
           />
+          <ColorChart color={shorthandValue} size={64} />
         </div>
 
         <Section
