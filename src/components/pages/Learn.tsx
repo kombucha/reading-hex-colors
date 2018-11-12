@@ -10,7 +10,6 @@ import {
   expandColor,
   shorthandColor
 } from "../../utils";
-import useColorInput from "../../hooks/useColorInput";
 import ColorChart from "../ColorChart";
 import LargeInput from "../base/LargeInput";
 import ColorShorthand from "../ColorShorthand";
@@ -32,7 +31,7 @@ function Learn(_props: Props) {
   const [colorInput, setColorInput] = useState("#AA22DD");
   const onChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = evt.target.value;
-    if (!newValue || newValue.match(/^#?[a-f0-9]*$/i)) {
+    if (!newValue || newValue.match(/^#?[a-f0-9]{0,6}$/i)) {
       setColorInput(evt.target.value);
     }
   };
