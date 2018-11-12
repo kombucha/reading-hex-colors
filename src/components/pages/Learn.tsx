@@ -112,7 +112,7 @@ function Learn(_props: Props) {
                 From that shape, the goal is now to associate it with a base{" "}
                 <ExternalLink href="https://en.wikipedia.org/wiki/Hue">hue</ExternalLink> or color. Represented below
                 are 12 colors in a circle.
-                <br />3 of them are what is called the{" "}
+                <br />3 of them are what we call the{" "}
                 <ExternalLink href="https://simple.wikipedia.org/wiki/Primary_color">primary colors</ExternalLink>. In
                 our case, that is Red, Green and Blue.
                 <br /> From those colors, we can get 3 other colors called the{" "}
@@ -124,8 +124,8 @@ function Learn(_props: Props) {
               </p>
               <p>
                 Those 12 colors will give you a good base when identifying a color. The goal here is to associate the
-                shape you've build previously with the closest one from the wheel below. Learning the shapes of the 12
-                base colors is now easy task, but it is doable with repetition 😊.
+                shape you built previously with the closest one from the wheel below. Learning the shapes of the 12 base
+                colors is no easy task, but it is possible with practice 😊.
               </p>
               <p>
                 For the current color, the closest matching hue is <em>{hue.name}</em>.
@@ -136,7 +136,7 @@ function Learn(_props: Props) {
         />
 
         <Section
-          title="Step 4: Get the light from the total"
+          title="Step 4: Get the lightness from the total"
           description={
             <p>
               To get the lightness of the colors, you must sum the components of the color. If it's close to 0, then
@@ -165,8 +165,7 @@ function Learn(_props: Props) {
                 If the range is large, then the color is <em>saturated</em>.
               </p>
               <p>
-                Finally, if the range is somewhere in between then you're faced with a <em>washed</em> or <em>muted</em>
-                color.
+                Finally, if the range is somewhere in between then you've got a <em>washed</em> or <em>muted</em> color.
               </p>
             </>
           }
