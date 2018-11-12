@@ -141,7 +141,7 @@ function Learn(_props: Props) {
             <p>
               To get the lightness of the colors, you must sum the components of the color. If it's close to 0, then
               it's a <em>dark</em> color. Close to the maximum possible value? Then it's a <em>light</em> color.
-              Somewhere in the middle? Than it's <em>medium</em>.
+              Somewhere in the middle? Then it's <em>medium</em>.
             </p>
           }
           widget={<LightnessWidget color={colorInput.value} />}
