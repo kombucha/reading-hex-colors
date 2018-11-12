@@ -857,6 +857,11 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
+"@rehooks/component-size@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@rehooks/component-size/-/component-size-1.0.1.tgz#a1dc2992d367a4ec17429d92c542f8a19fd693e2"
+  integrity sha512-yzXzxqC8pkwoO7tjcrf3fW9RRG9eCNjS2fNQpfcQ5AyxNs8OsMZ+D2CtNg02bPOQaoHq1888aEJBMrjBznlW5Q==
+
 "@svgr/core@^2.4.1":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@svgr/core/-/core-2.4.1.tgz#03a407c28c4a1d84305ae95021e8eabfda8fa731"
