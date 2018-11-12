@@ -84,8 +84,8 @@ function Learn(_props: Props) {
               </p>
               <p>
                 Of course we're losing some information by doing this. <InlineColor color="#FFF0F0" /> and{" "}
-                <InlineColor color="#FFFFFF" /> are not the same colors after all. But in the general case, this is a
-                good enough approximation.
+                <InlineColor color="#FFFFFF" /> are not the same colors after all. But generally, this is a good enough
+                approximation.
               </p>
             </>
           }
@@ -96,9 +96,9 @@ function Learn(_props: Props) {
           title="Step 2: Build a mental chart"
           description={
             <p>
-              You know have 3 digits to play with (red: <code>{r}</code>, green: <code>{g}</code> and blue:{" "}
-              <code>{b}</code>). The goal is to build a mental bar chart with 3 bars. Each bar represent a component and
-              it's relative percentage. This will give you the "shape" of the color.
+              You now have 3 digits to play with (red: <code>{r}</code>, green: <code>{g}</code> and blue:{" "}
+              <code>{b}</code>). The goal is to build a mental bar chart with 3 bars. Each bar represents a component
+              and its relative percentage. This will give you the "shape" of the color.
             </p>
           }
           widget={<ColorChart color={colorInput.value} />}
