@@ -10,7 +10,7 @@
 .slider::-webkit-slider-runnable-track {
   width: 100%;
   height: 2px;
-  cursor: pointer;
+  cursor: default;
   box-shadow: none;
   background: #ffffff;
   border-radius: 0px;
@@ -23,7 +23,7 @@
   width: 16px;
   border-radius: 16px;
   background: #ffffff;
-  cursor: pointer;
+  cursor: default;
   -webkit-appearance: none;
   margin-top: -7px;
 }
@@ -33,7 +33,7 @@
 .slider::-moz-range-track {
   width: 100%;
   height: 2px;
-  cursor: pointer;
+  cursor: default;
   box-shadow: none;
   background: #ffffff;
   border-radius: 0px;
@@ -46,12 +46,12 @@
   width: 16px;
   border-radius: 16px;
   background: #ffffff;
-  cursor: pointer;
+  cursor: default;
 }
 .slider::-ms-track {
   width: 100%;
   height: 2px;
-  cursor: pointer;
+  cursor: default;
   background: transparent;
   border-color: transparent;
   color: transparent;
@@ -75,7 +75,7 @@
   width: 16px;
   border-radius: 16px;
   background: #ffffff;
-  cursor: pointer;
+  cursor: default;
   height: 2px;
 }
 .slider:focus::-ms-fill-lower {
