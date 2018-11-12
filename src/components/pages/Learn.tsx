@@ -60,7 +60,7 @@ function Learn(_props: Props) {
                 <ExternalLink href="https://desandro.com">David DeSandro</ExternalLink> gave at{" "}
                 <ExternalLink href="https://www.dotcss.io/">dotCSS 2018</ExternalLink>.
               </p>
-              <p>Let's start! Pick a color or chose the default one</p>
+              <p>Let's start! Pick a color or keep the default one.</p>
             </>
           }
         />
