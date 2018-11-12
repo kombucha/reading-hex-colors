@@ -14,12 +14,14 @@ const SaturationWidget: React.SFC<Props> = ({ color }) => {
   const [r, g, b] = parseHexColor(color);
   const saturation = mapToSaturation(color);
 
+  const value = (Math.max(r, g, b) - Math.min(r, g, b)) / 255;
+
   return (
     <Card className={styles.container}>
       <span>
         Saturation: <em>{saturation}</em>
       </span>
-      <Slider min={0} max={255} value={Math.max(r, g, b) - Math.min(r, g, b)} />
+      <Slider value={value} />
     </Card>
   );
 };

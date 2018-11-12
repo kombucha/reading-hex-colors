@@ -1,5 +1,6 @@
 .container {
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .color {

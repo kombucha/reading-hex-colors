@@ -14,12 +14,14 @@ const LightnessWidget: React.SFC<Props> = ({ color }) => {
   const [r, g, b] = parseHexColor(color);
   const lightness = mapToLightness(color);
 
+  const value = (r + g + b) / 100;
+
   return (
     <Card className={styles.container}>
       <span>
         Lightness: <em>{lightness}</em>
       </span>
-      <Slider min={0} max={3 * 255} value={r + g + b} />
+      <Slider value={value} />
     </Card>
   );
 };

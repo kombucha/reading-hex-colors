@@ -1,19 +1,86 @@
 .slider {
-  position: relative;
-  border-bottom: 2px solid var(--text-color);
-  height: 10px;
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 7px 0;
 }
 
-.indicator {
-  --size: 8px;
-  width: 0;
-  height: 0;
-  border-left: var(--size) solid transparent;
-  border-right: var(--size) solid transparent;
-  border-top: var(--size) solid var(--text-color);
-
-  position: absolute;
-  top: 0;
-  transform: translateX(-50%);
-  transition: left 150ms ease-in-out;
+.slider:focus {
+  outline: none;
+}
+.slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  box-shadow: none;
+  background: #ffffff;
+  border-radius: 0px;
+  border: 0px solid rgba(0, 0, 0, 0);
+}
+.slider::-webkit-slider-thumb {
+  box-shadow: none;
+  border: 2.5px solid rgba(0, 229, 132, 0);
+  height: 16px;
+  width: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+.slider:focus::-webkit-slider-runnable-track {
+  background: #ffffff;
+}
+.slider::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  box-shadow: none;
+  background: #ffffff;
+  border-radius: 0px;
+  border: 0px solid rgba(0, 0, 0, 0);
+}
+.slider::-moz-range-thumb {
+  box-shadow: none;
+  border: 2.5px solid rgba(0, 229, 132, 0);
+  height: 16px;
+  width: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  cursor: pointer;
+}
+.slider::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.slider::-ms-fill-lower {
+  background: #f2f2f2;
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  box-shadow: none;
+}
+.slider::-ms-fill-upper {
+  background: #ffffff;
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  box-shadow: none;
+}
+.slider::-ms-thumb {
+  box-shadow: none;
+  border: 2.5px solid rgba(0, 229, 132, 0);
+  height: 16px;
+  width: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  cursor: pointer;
+  height: 2px;
+}
+.slider:focus::-ms-fill-lower {
+  background: #ffffff;
+}
+.slider:focus::-ms-fill-upper {
+  background: #ffffff;
 }
