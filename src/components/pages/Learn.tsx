@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { RouteComponentProps } from "@reach/router";
 
 import {
@@ -29,9 +29,15 @@ type Props = RouteComponentProps;
 const formatSingleDigitComponent = (component: number) => component.toString(16)[0].toUpperCase();
 
 function Learn(_props: Props) {
-  const colorInput = useColorInput("#AA22DD");
-  const expandedValue = expandColor(colorInput.value);
-  const shorthandValue = shorthandColor(colorInput.value);
+  const [colorInput, setColorInput] = useState("#AA22DD");
+  const onChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = evt.target.value;
+    if (!newValue || newValue.match(/^#?[a-f0-9]*$/i)) {
+      setColorInput(evt.target.value);
+    }
+  };
+  const expandedValue = expandColor(colorInput);
+  const shorthandValue = shorthandColor(colorInput);
 
   const [r, g, b] = parseHexColor(shorthandValue);
   const hue = mapToHue(shorthandValue) || { name: "unknown" };
@@ -59,7 +65,8 @@ function Learn(_props: Props) {
 
         <div className={styles.inputContainer}>
           <LargeInput
-            {...colorInput}
+            value={colorInput}
+            onChange={onChange}
             autoFocus
             pattern={VALID_HEX_COLOR_PATTERN}
             placeholder="#000000"
