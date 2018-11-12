@@ -20,9 +20,13 @@ const BLACK = { name: "black", value: "000" };
 export const VALID_HEX_COLOR_PATTERN = "^#?(?:[a-fA-F0-9]{3}|[a-fA-F0-9]{6})$";
 
 export const parseHexColor = mem(function parseHexColor(hexColor: string, simplified = false) {
+  const DEFAULT_COLOR = [0, 0, 0];
+
   if (hexColor.startsWith("#")) {
     hexColor = hexColor.slice(1);
   }
+
+  if (!hexColor.match(VALID_HEX_COLOR_PATTERN)) return DEFAULT_COLOR;
 
   switch (hexColor.length) {
     case 3:
@@ -33,7 +37,7 @@ export const parseHexColor = mem(function parseHexColor(hexColor: string, simpli
         return parseInt(numStr, 16);
       });
     default:
-      return [0, 0, 0];
+      return DEFAULT_COLOR;
   }
 });
 
