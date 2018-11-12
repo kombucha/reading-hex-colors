@@ -5,20 +5,15 @@ const VALID_COLORS_CHAR_CODES = Array.from("#0123456789abcdefABCDEF").map(c => c
 
 function useColorInput(initialValue: string) {
   const input = useInput(initialValue);
-  const onKeyPress = useCallback(
-    (evt: React.KeyboardEvent) => {
-      const isHash = evt.charCode === VALID_COLORS_CHAR_CODES[0];
-      const cursorPosition = (evt.target as any).selectionStart || 0;
+  const onKeyPress = useCallback((evt: React.KeyboardEvent) => {
+    const isHash = evt.charCode === VALID_COLORS_CHAR_CODES[0];
+    const cursorPosition = (evt.target as any).selectionStart || 0;
+    const value = (evt.target as any).value || "";
 
-      if (
-        !VALID_COLORS_CHAR_CODES.includes(evt.charCode) ||
-        (isHash && (cursorPosition !== 0 || input.value.includes("#")))
-      ) {
-        evt.preventDefault();
-      }
-    },
-    [input.value]
-  );
+    if (!VALID_COLORS_CHAR_CODES.includes(evt.charCode) || (isHash && (cursorPosition !== 0 || value.includes("#")))) {
+      evt.preventDefault();
+    }
+  }, []);
 
   return { ...input, onKeyPress };
 }
