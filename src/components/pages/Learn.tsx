@@ -41,7 +41,7 @@ function Learn(_props: Props) {
                 <ExternalLink href="https://desandro.com">David DeSandro</ExternalLink> gave at{" "}
                 <ExternalLink href="https://www.dotcss.io/">dotCSS 2018</ExternalLink>.
               </p>
-              <p>Let's start !</p>
+              <p>Let's start!</p>
             </>
           }
         />
@@ -58,7 +58,7 @@ function Learn(_props: Props) {
                 A hex color string is the concatenation of 3 numbers represented in{" "}
                 <ExternalLink href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</ExternalLink> or base 16. We
                 usually count in base 10 with numbers ranging from 0 to 9. Hexadecimal numbers on the other hand go like
-                this : <code>0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - A - B - C - D - E - F</code>
+                this: <code>0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - A - B - C - D - E - F</code>
                 .
                 <br />
               </p>
@@ -125,7 +125,7 @@ function Learn(_props: Props) {
               <p>
                 Those 12 colors will give you a good base when identifying a color. The goal here is to associate the
                 shape you've build previously with the closest one from the wheel below. Learning the shapes of the 12
-                base colors is now easy task, but it is doable with repetition :).
+                base colors is now easy task, but it is doable with repetition 😊.
               </p>
               <p>
                 For the current color, the closest matching hue is <em>{hue.name}</em>.
@@ -174,7 +174,7 @@ function Learn(_props: Props) {
         />
 
         <Section
-          title="Profit !"
+          title="Profit!"
           description={
             <>
               <p className={styles.profitText}>
