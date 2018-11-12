@@ -14,7 +14,7 @@ import Section from "../Section";
 import styles from "./Learn.module.css";
 import Card from "../base/Card";
 import InlineColor from "../InlineColor";
-import Slider from "../Slider";
+import Slider from "../base/Slider";
 import LightnessWidget from "../LightnessWidget";
 import SaturationWidget from "../SaturationWidget";
 

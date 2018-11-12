@@ -1,7 +1,7 @@
 import React from "react";
 
 import Card from "./base/Card";
-import Slider from "./Slider";
+import Slider from "./base/Slider";
 import { mapToLightness, parseHexColor } from "../utils";
 
 import styles from "./LightnessWidget.module.css";

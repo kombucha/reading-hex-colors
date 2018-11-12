@@ -1,7 +1,7 @@
 import React from "react";
 
 import Card from "./base/Card";
-import Slider from "./Slider";
+import Slider from "./base/Slider";
 import { parseHexColor, mapToSaturation } from "../utils";
 
 import styles from "./SaturationWidget.module.css";
