@@ -43,6 +43,9 @@ function Learn(_props: Props) {
   const lightness = mapToLightness(shorthandValue);
   const saturation = mapToSaturation(shorthandValue);
 
+  const doesSaturationMatter = r !== g || g !== b;
+  const doesLightnessMatter = hue.name !== "white" && hue.name !== "black";
+
   return (
     <>
       <div className={styles.container}>
@@ -160,6 +163,7 @@ function Learn(_props: Props) {
         />
 
         <Section
+          doesntApply={!doesLightnessMatter}
           title="Step 4: Get the lightness from the total"
           description={
             <p>
@@ -172,6 +176,7 @@ function Learn(_props: Props) {
         />
 
         <Section
+          doesntApply={!doesSaturationMatter}
           title="Step 5: Get the saturation from the range"
           description={
             <>
@@ -201,9 +206,9 @@ function Learn(_props: Props) {
           description={
             <>
               <p className={styles.profitText}>
-                <InlineColor color={expandedValue} /> is a{" "}
+                <InlineColor color={expandedValue} /> is {(doesSaturationMatter || doesLightnessMatter) && "a "}
                 <em>
-                  {saturation} {lightness} {hue.name}
+                  {doesSaturationMatter && saturation} {doesLightnessMatter && lightness} {hue.name}
                 </em>
                 . 🎉🎉🎉
               </p>

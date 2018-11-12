@@ -1,3 +1,7 @@
+.doesntApply {
+  opacity: 0.3;
+}
+
 .title {
   font-size: var(--font-size-l);
   font-weight: 600;

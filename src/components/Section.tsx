@@ -6,11 +6,12 @@ interface Props {
   title: string;
   description: React.ReactNode;
   widget?: React.ReactNode;
+  doesntApply?: boolean;
 }
 
-const Section: React.SFC<Props> = ({ title, description, widget }) => {
+const Section: React.SFC<Props> = ({ title, description, widget, doesntApply }) => {
   return (
-    <div>
+    <div className={doesntApply ? styles.doesntApply : undefined}>
       <h2 className={styles.title}>{title}</h2>
       <>{description}</>
       {widget && <div className={styles.widget}>{widget}</div>}
