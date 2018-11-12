@@ -42,13 +42,13 @@ export const parseHexColor = mem(function parseHexColor(hexColor: string, simpli
 });
 
 export function asPercentage(rgbComponent: number) {
-  return `${(rgbComponent / 255) * 100}%`;
+  return `${(rgbComponent / 0xff) * 100}%`;
 }
 
 export function mapToHue(hexColor: string) {
   const colorComponents = parseHexColor(hexColor, true);
 
-  if (colorComponents.every(c => c === 255)) {
+  if (colorComponents.every(c => c === 0xff)) {
     return WHITE;
   } else if (colorComponents.every(c => c === 0)) {
     return BLACK;
@@ -72,7 +72,7 @@ export function mapToHue(hexColor: string) {
 }
 
 export function mapToSaturation(hexColor: string) {
-  const normalizedComponents = parseHexColor(hexColor, true).map(c => c / 255);
+  const normalizedComponents = parseHexColor(hexColor, true).map(c => c / 0xff);
   const diff = Math.max(...normalizedComponents) - Math.min(...normalizedComponents);
 
   if (diff === 0) {
@@ -87,7 +87,7 @@ export function mapToSaturation(hexColor: string) {
 }
 
 export function mapToLightness(hexColor: string) {
-  const normalizedComponents = parseHexColor(hexColor, true).map(c => c / 255);
+  const normalizedComponents = parseHexColor(hexColor, true).map(c => c / 0xff);
   const sum = normalizedComponents.reduce((acc, val) => acc + val);
 
   if (sum < 1.2) {

@@ -141,9 +141,9 @@ function Learn(_props: Props) {
                 our case, that is Red, Green and Blue.
                 <br /> From those colors, we can get 3 other colors called the{" "}
                 <ExternalLink href="https://en.wikipedia.org/wiki/Secondary_color">secondary colors</ExternalLink>.
-                Secondary colors are obtained by mixing two primary colors. Yellow for example (<code>#FF0</code>) is a
-                mix of red and green. Finally, we can get 6 extra colors by mixing a primary with a secondary. Those are
-                called the{" "}
+                Secondary colors are obtained by mixing two primary colors. Yellow for example (
+                <InlineColor color="#FF0" />) is a mix of red and green. Finally, we can get 6 extra colors by mixing a
+                primary with a secondary. Those are called the{" "}
                 <ExternalLink href="https://en.wikipedia.org/wiki/Tertiary_color">tertiary colors</ExternalLink>.
               </p>
               <p>

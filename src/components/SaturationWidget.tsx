@@ -14,7 +14,7 @@ const SaturationWidget: React.SFC<Props> = ({ color }) => {
   const [r, g, b] = parseHexColor(color);
   const saturation = mapToSaturation(color);
 
-  const value = (Math.max(r, g, b) - Math.min(r, g, b)) / 255;
+  const value = (Math.max(r, g, b) - Math.min(r, g, b)) / 0xff;
 
   return (
     <Card className={styles.container}>
