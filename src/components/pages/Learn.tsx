@@ -161,7 +161,7 @@ function Learn(_props: Props) {
               </p>
             </>
           }
-          widget={<ColorWheel selectedColor={hue.name} />}
+          widget={<ColorWheel selectedColor={hue.name} maxSize={520} />}
         />
 
         <Section
