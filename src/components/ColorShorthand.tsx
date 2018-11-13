@@ -1,5 +1,7 @@
 import React from "react";
 
+import Card from "./base/Card";
+
 import styles from "./ColorShorthand.module.css";
 
 interface Props {
@@ -8,13 +10,13 @@ interface Props {
 
 const ColorShorthand: React.SFC<Props> = ({ expandedColor }) => {
   return (
-    <div className={styles.container}>
+    <Card className={styles.container}>
       {Array.from(expandedColor).map((char, idx) => (
         <span key={idx} className={styles.letter}>
           {char}
         </span>
       ))}
-    </div>
+    </Card>
   );
 };
 

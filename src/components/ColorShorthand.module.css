@@ -1,8 +1,6 @@
 .container {
   white-space: nowrap;
-  background: #000;
   text-align: center;
-  padding: 64px;
 }
 
 .letter {
