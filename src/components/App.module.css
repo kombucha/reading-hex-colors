@@ -1,12 +1,9 @@
 .container {
-  display: grid;
-  grid-auto-flow: row;
-  justify-items: center;
-  gap: var(--space-m);
-  max-width: 600px;
-  margin: 0 auto;
+  padding: 32px;
 }
 
-.colorInput {
-  margin: var(--space-m) 0;
+.logo {
+  position: fixed;
+  top: 32px;
+  left: 32px;
 }

@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+}
+
+.red,
+.green,
+.blue {
+  position: absolute;
+  width: 33.333%;
+  height: 33.333%;
+}
+
+.red {
+  background: #f00;
+  top: 0;
+  left: 0;
+}
+
+.green {
+  background: #0f0;
+  bottom: 0;
+  left: 0;
+}
+
+.blue {
+  background: #00f;
+  top: 0;
+  right: 0;
+}
