@@ -1,26 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { parseHexColor } from "../utils";
 
 import styles from "./DissectedColor.module.css";
-import Card from "./base/Card";
 
 interface Props {
   color: string;
 }
 
-interface ColorComponentProps {
-  value: number;
-  part: "r" | "g" | "b";
-}
+const formatter = (n: number, base: number) => n.toString(base).padStart(2, "0");
 
 const DissectedColor: React.SFC<Props> = ({ color }) => {
+  const [base, setBase] = useState(10);
   const [r, g, b] = parseHexColor(color);
 
+  const handleClick = () => setBase(base === 10 ? 16 : 10);
+
   return (
-    <ul className={styles.list}>
-      <li className={styles.itemRed}>{r.toString().padStart(2, "0")}</li>
-      <li className={styles.itemGreen}>{g.toString().padStart(2, "0")}</li>
-      <li className={styles.itemBlue}>{b.toString().padStart(2, "0")}</li>
+    <ul className={styles.list} onClick={handleClick}>
+      <li className={styles.itemRed}>{formatter(r, base)}</li>
+      <li className={styles.itemGreen}>{formatter(g, base)}</li>
+      <li className={styles.itemBlue}>{formatter(b, base)}</li>
     </ul>
   );
 };

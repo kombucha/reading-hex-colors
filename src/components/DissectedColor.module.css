@@ -5,6 +5,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   font-size: 64px;
+  cursor: pointer;
 }
 
 .itemRed,
@@ -12,6 +13,7 @@
 .itemBlue {
   position: relative;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .itemRed::after,
