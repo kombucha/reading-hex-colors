@@ -9,7 +9,6 @@ interface Props {
 const ColorShorthand: React.SFC<Props> = ({ expandedColor }) => {
   return (
     <div className={styles.container}>
-      <span className={styles.letter}>#</span>
       {Array.from(expandedColor).map((char, idx) => (
         <span key={idx} className={styles.letter}>
           {char}
