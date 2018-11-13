@@ -36,7 +36,7 @@ function Learn(_props: Props) {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.sections}>
         <Section
           title="Goal"
           description={
@@ -51,21 +51,22 @@ function Learn(_props: Props) {
               <p>Let's start! Pick a color or keep the default one.</p>
             </>
           }
+          widget={
+            <div className={styles.colorContainer}>
+              <LargeInput
+                className={styles.colorInput}
+                value={colorModel.originalInput}
+                onChange={onChange}
+                autoFocus
+                pattern={VALID_HEX_COLOR_PATTERN}
+                placeholder="#000000"
+                minLength={4}
+                maxLength={7}
+              />
+              <ColorChart color={colorModel} size={64} />
+            </div>
+          }
         />
-
-        <div className={styles.colorContainer}>
-          <LargeInput
-            className={styles.colorInput}
-            value={colorModel.originalInput}
-            onChange={onChange}
-            autoFocus
-            pattern={VALID_HEX_COLOR_PATTERN}
-            placeholder="#000000"
-            minLength={4}
-            maxLength={7}
-          />
-          <ColorChart color={colorModel} size={64} />
-        </div>
 
         <Section
           title="Anatomy of a hex color"
@@ -150,7 +151,7 @@ function Learn(_props: Props) {
               </p>
             </>
           }
-          widget={<ColorWheel selectedColor={colorModel.hue} maxSize={520} />}
+          widget={<ColorWheel selectedColor={colorModel.hue} maxSize={600} />}
         />
 
         <Section
