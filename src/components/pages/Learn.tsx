@@ -30,7 +30,7 @@ function Learn(_props: Props) {
   const onChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = evt.target.value;
     if (!newValue || newValue.match(/^#?[a-f0-9]{0,6}$/i)) {
-      setColorModel(analyzeColor(newValue));
+      setColorModel(analyzeColor(newValue.toUpperCase()));
     }
   };
 
