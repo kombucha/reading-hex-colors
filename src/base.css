@@ -16,7 +16,7 @@
 
 html,
 body {
-  font-family: arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   background: var(--background-color);
   color: var(--text-color);
   font-size: var(--font-size-base);
