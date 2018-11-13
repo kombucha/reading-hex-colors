@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RouteComponentProps } from "@reach/router";
 
 import { VALID_HEX_COLOR_PATTERN } from "../../analyzeColor/validateColor";
-import analyzeColor from "../../analyzeColor";
+import analyzeColor from "../../analyzeColor/analyzeColor";
 import ColorChart from "../ColorChart";
 import LargeInput from "../base/LargeInput";
 import ColorShorthand from "../ColorShorthand";
