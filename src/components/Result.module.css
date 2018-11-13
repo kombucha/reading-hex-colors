@@ -8,4 +8,5 @@
   padding: 32px;
   font-size: 48px;
   transition: background 150ms ease-in-out;
+  text-align: center;
 }

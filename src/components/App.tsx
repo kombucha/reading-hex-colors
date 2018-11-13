@@ -7,6 +7,7 @@ import FadeTransitionRouter from "./FadeTransitionRouter";
 
 import styles from "./App.module.css";
 import Logo from "./base/Logo";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Learn path="learn" />
         <Train path="dashboard" />
       </FadeTransitionRouter>
+      <Footer />
     </div>
   );
 }
