@@ -1,0 +1,10 @@
+.table {
+  table-layout: fixed;
+  text-transform: uppercase;
+}
+
+.table td {
+  width: 4ch;
+  text-align: center;
+  border: 1px solid #ddd;
+}

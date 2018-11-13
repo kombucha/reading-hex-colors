@@ -22,6 +22,7 @@ import styles from "./Learn.module.css";
 import InlineColor from "../InlineColor";
 import LightnessWidget from "../LightnessWidget";
 import SaturationWidget from "../SaturationWidget";
+import CountingInHexTable from "../CountingInHexTable";
 
 type Props = RouteComponentProps;
 
@@ -85,12 +86,11 @@ function Learn(_props: Props) {
             <>
               <p>
                 A hex color string is the concatenation of 3 numbers represented in{" "}
-                <ExternalLink href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</ExternalLink> or base 16. We
-                usually count in base 10 with numbers ranging from 0 to 9. Hexadecimal numbers on the other hand go like
-                this: <code>0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - A - B - C - D - E - F</code>
-                .
+                <ExternalLink href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</ExternalLink> or base 16.
                 <br />
+                Here's how you count in base 16:
               </p>
+              <CountingInHexTable />
               <p>
                 Each number represents one component in the color, respectively Red Green and Blue. This number goes
                 from 0 (<code>0x00</code>) to 255 (<code>0xFF</code>)

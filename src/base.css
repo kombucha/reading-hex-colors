@@ -1,6 +1,6 @@
 :root {
   --background-color: #000;
-  --text-color: #fff;
+  --text-color: #ddd;
   --text-muted-color: #888;
   --text-error-color: #d44;
 
@@ -9,7 +9,7 @@
   --space-m: 16px;
   --space-l: 32px;
 
-  --font-size-base: 16px;
+  --font-size-base: 20px;
   --font-size-l: 2rem;
   --font-size-xl: 4rem;
 }
