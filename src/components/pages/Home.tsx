@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, RouteComponentProps } from "@reach/router";
+
+import generateRandomNiceColor from "../../utils/generateRandomNiceColor";
 
 import styles from "./Home.module.css";
 
 type Props = RouteComponentProps;
 
 function Home(_props: Props) {
-  const [color, setColor] = useState("#AA22DD");
+  const [color, setColor] = useState(generateRandomNiceColor());
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setColor(generateRandomNiceColor());
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <div className={styles.container}>

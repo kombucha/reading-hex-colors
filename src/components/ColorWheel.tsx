@@ -3,8 +3,8 @@ import useComponentSize, { ComponentSize } from "@rehooks/component-size";
 import cn from "classnames";
 
 import ColorChart from "./ColorChart";
-import analyzeColor from "../analyzeColor/analyzeColor";
-import { COLOR_MAP } from "../analyzeColor/baseColors";
+import analyzeColor from "../utils/analyzeColor";
+import { COLOR_MAP } from "../utils/baseColors";
 
 import styles from "./ColorWheel.module.css";
 

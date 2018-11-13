@@ -2,7 +2,7 @@ import React from "react";
 
 import Card from "./base/Card";
 import Slider from "./base/Slider";
-import { ColorModel } from "../analyzeColor/types";
+import { ColorModel } from "../utils/types";
 
 import styles from "./SaturationWidget.module.css";
 

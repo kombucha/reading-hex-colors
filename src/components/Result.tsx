@@ -3,7 +3,7 @@ import React from "react";
 import InlineColor from "./InlineColor";
 
 import styles from "./Result.module.css";
-import { ColorModel } from "../analyzeColor/types";
+import { ColorModel } from "../utils/types";
 
 interface Props {
   color: ColorModel;

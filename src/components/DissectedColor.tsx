@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { ColorModel } from "../analyzeColor/types";
+import { ColorModel } from "../utils/types";
 
 import styles from "./DissectedColor.module.css";
 

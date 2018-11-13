@@ -21,6 +21,7 @@
 
 .rightContent {
   text-align: right;
+  transition: background 500ms ease-in-out;
 }
 
 .callOut {
@@ -37,6 +38,7 @@
 
 .currentColor {
   font-size: 32px;
+  text-transform: uppercase;
 }
 
 .list {

@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 
-import { ColorModel } from "../analyzeColor/types";
+import { ColorModel } from "../utils/types";
 
 import styles from "./ColorChart.module.css";
 
