@@ -48,4 +48,5 @@
   grid-auto-flow: column;
   grid-gap: 32px;
   justify-content: start;
+  align-items: center;
 }

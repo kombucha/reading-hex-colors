@@ -33,6 +33,7 @@ function Home(_props: Props) {
           <li>
             <ButtonLink to="learn">Learn more</ButtonLink>
           </li>
+          <li>⚠️ WIP️️ ⚠️</li>
         </ul>
       </div>
       <div className={styles.rightContent} style={{ background: color }}>
