@@ -24,6 +24,7 @@ import LightnessWidget from "../LightnessWidget";
 import SaturationWidget from "../SaturationWidget";
 import CountingInHexTable from "../CountingInHexTable";
 import Result from "../Result";
+import Profit from "../Profit";
 
 type Props = RouteComponentProps;
 
@@ -206,31 +207,7 @@ function Learn(_props: Props) {
           widget={<SaturationWidget color={shorthandValue} />}
         />
 
-        <Section
-          title="Profit!"
-          description={
-            <>
-              <p className={styles.profitText}>
-                <InlineColor color={expandedValue} /> is {(doesSaturationMatter || doesLightnessMatter) && "a "}
-                <em>
-                  {doesSaturationMatter && saturation} {doesLightnessMatter && lightness} {hue.name}
-                </em>
-                . 🎉🎉🎉
-              </p>
-              <div style={{ width: "100%", height: 0, paddingBottom: "57%", position: "relative" }}>
-                <iframe
-                  src="https://giphy.com/embed/Is1O1TWV0LEJi"
-                  width="100%"
-                  height="100%"
-                  style={{ position: "absolute" }}
-                  frameBorder="0"
-                  className="giphy-embed"
-                  allowFullScreen
-                />
-              </div>
-            </>
-          }
-        />
+        <Profit />
       </div>
       <Result color={expandedValue} />
     </>
