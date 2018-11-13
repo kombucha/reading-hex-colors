@@ -8,11 +8,14 @@ import FadeTransitionRouter from "./FadeTransitionRouter";
 import styles from "./App.module.css";
 import Logo from "./base/Logo";
 import Footer from "./Footer";
+import { Link } from "@reach/router";
 
 function App() {
   return (
     <div className={styles.container}>
-      <Logo className={styles.logo} />
+      <Link className={styles.homeLink} to="/">
+        <Logo />
+      </Link>
       <FadeTransitionRouter>
         <Home path="/" />
         <Learn path="learn" />
