@@ -1,10 +1,13 @@
 .container {
   white-space: nowrap;
+  background: #000;
+  text-align: center;
+  padding: 64px;
 }
 
 .letter {
   text-transform: uppercase;
-  font-size: var(--font-size-l);
+  font-size: 64px;
 }
 
 .letter:nth-child(odd) {

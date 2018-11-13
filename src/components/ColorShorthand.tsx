@@ -13,16 +13,14 @@ const ColorShorthand: React.SFC<Props> = ({ color }) => {
   const expandedColor = expandColor(color).slice(1);
 
   return (
-    <Card>
-      <span className={styles.container}>
-        <span className={styles.letter}>#</span>
-        {Array.from(expandedColor).map((char, idx) => (
-          <span key={idx} className={styles.letter}>
-            {char}
-          </span>
-        ))}
-      </span>
-    </Card>
+    <div className={styles.container}>
+      <span className={styles.letter}>#</span>
+      {Array.from(expandedColor).map((char, idx) => (
+        <span key={idx} className={styles.letter}>
+          {char}
+        </span>
+      ))}
+    </div>
   );
 };
 

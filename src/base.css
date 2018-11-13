@@ -1,7 +1,7 @@
 :root {
   --background-color: #111;
-  --text-color: #ddd;
-  --text-muted-color: #888;
+  --text-color: #fff;
+  --text-muted-color: rgba(255, 255, 255, 0.4);
   --text-error-color: #d44;
 
   /* optimal reading width */
