@@ -7,3 +7,9 @@
   top: 32px;
   left: 32px;
 }
+
+@media only screen and (max-width: 800px) {
+  .homeLink {
+    position: absolute;
+  }
+}
