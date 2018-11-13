@@ -8,17 +8,19 @@ const sixteen = Array(16)
 
 const CountingInHexTable = () => (
   <table className={styles.table}>
-    <tr>
-      {sixteen.map(i => (
-        <td>{i}</td>
-      ))}
-    </tr>
+    <tbody>
+      <tr>
+        {sixteen.map(i => (
+          <td key={i}>{i}</td>
+        ))}
+      </tr>
 
-    <tr>
-      {sixteen.map(i => (
-        <td>{i.toString(16)}</td>
-      ))}
-    </tr>
+      <tr>
+        {sixteen.map(i => (
+          <td key={i}>{i.toString(16)}</td>
+        ))}
+      </tr>
+    </tbody>
   </table>
 );
 
