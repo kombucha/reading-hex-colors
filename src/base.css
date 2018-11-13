@@ -1,8 +1,11 @@
 :root {
-  --background-color: #000;
+  --background-color: #111;
   --text-color: #ddd;
   --text-muted-color: #888;
   --text-error-color: #d44;
+
+  /* optimal reading width */
+  --content-max-width: 75ch;
 
   --space-xs: 4px;
   --space-s: 8px;

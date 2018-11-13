@@ -1,23 +1,38 @@
 .list {
   list-style: none;
   margin: 0;
-  display: inline-flex;
-  font-size: var(--font-size-l);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  font-size: 64px;
 }
 
-.item {
-  margin-right: var(--space-m);
+.itemRed,
+.itemGreen,
+.itemBlue {
+  position: relative;
+  text-align: center;
 }
 
-.componentContainer {
-  display: flex;
-  flex-direction: column;
+.itemRed::after,
+.itemGreen::after,
+.itemBlue::after {
+  display: block;
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
 }
 
-.componentValue {
-  text-transform: uppercase;
+.itemRed::after {
+  background-color: #f00;
 }
-
-.componentPart {
-  text-transform: uppercase;
+.itemGreen::after {
+  background-color: #0f0;
+}
+.itemBlue::after {
+  background-color: #00f;
 }

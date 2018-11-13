@@ -90,7 +90,9 @@ function Learn(_props: Props) {
                 <br />
                 Here's how you count in base 16:
               </p>
+              <br />
               <CountingInHexTable />
+              <br />
               <p>
                 Each number represents one component in the color, respectively Red Green and Blue. This number goes
                 from 0 (<code>0x00</code>) to 255 (<code>0xFF</code>)

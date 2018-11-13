@@ -10,7 +10,7 @@
 }
 
 .widget {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  margin: var(--space-m);
+  margin: var(--space-m); */
 }
