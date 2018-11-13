@@ -1,0 +1,32 @@
+.link {
+  --height: 64px;
+
+  display: inline-block;
+  height: var(--height);
+  line-height: var(--height);
+
+  cursor: pointer;
+
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 0 32px;
+}
+
+.link,
+.link:hover,
+.link:focus,
+.link:visited {
+  background: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--text-color);
+  text-decoration: none;
+}
+
+.link.inverted,
+.link.inverted:hover,
+.link.inverted:focus,
+.link.inverted:visited {
+  background: var(--text-color);
+  color: var(--background-color);
+  text-decoration: none;
+}

@@ -44,26 +44,8 @@
 .list {
   list-style: none;
   margin: 0;
-}
-
-.link {
-  display: inline-block;
-  font-size: 3rem;
-  cursor: pointer;
-  transition: all 150ms ease-in-out;
-  margin-bottom: var(--space-m);
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.48);
-}
-
-.link:hover {
-  transform: scale(1.2);
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.72);
-}
-
-.link,
-.link:hover,
-.link:focus,
-.link:visited {
-  color: var(--text-color);
-  text-decoration: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 32px;
+  justify-content: start;
 }

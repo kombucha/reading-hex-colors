@@ -3,12 +3,11 @@ import React from "react";
 import Home from "./pages/Home";
 import Learn from "./pages/Learn";
 import Train from "./pages/Train";
-import FadeTransitionRouter from "./FadeTransitionRouter";
 
 import styles from "./App.module.css";
 import Logo from "./base/Logo";
 import Footer from "./Footer";
-import { Link } from "@reach/router";
+import { Link, Router } from "@reach/router";
 
 function App() {
   return (
@@ -16,11 +15,14 @@ function App() {
       <Link className={styles.homeLink} to="/">
         <Logo />
       </Link>
-      <FadeTransitionRouter>
+      {/* Bring back transition effect when it's fixed */}
+      {/* <FadeTransitionRouter> */}
+      <Router>
         <Home path="/" />
         <Learn path="learn" />
         <Train path="dashboard" />
-      </FadeTransitionRouter>
+      </Router>
+      {/* </FadeTransitionRouter> */}
       <Footer />
     </div>
   );

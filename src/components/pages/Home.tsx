@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link, RouteComponentProps } from "@reach/router";
+import { RouteComponentProps } from "@reach/router";
 
 import generateRandomNiceColor from "../../utils/generateRandomNiceColor";
+import ButtonLink from "../ButtonLink";
 
 import styles from "./Home.module.css";
 
@@ -25,14 +26,12 @@ function Home(_props: Props) {
         <h1 className={styles.title}>Can you read hex colors?</h1>
         <ul className={styles.list}>
           <li>
-            <Link className={styles.link} to="train">
+            <ButtonLink to="train" inverted>
               Take the test
-            </Link>
+            </ButtonLink>
           </li>
           <li>
-            <Link className={styles.link} to="learn">
-              Learn more
-            </Link>
+            <ButtonLink to="learn">Learn more</ButtonLink>
           </li>
         </ul>
       </div>
