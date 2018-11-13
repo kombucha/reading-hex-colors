@@ -1,9 +1,8 @@
 import React from "react";
 import cn from "classnames";
 
-import { COLOR_MAP } from "../utils";
-
 import styles from "./ColorFullText.module.css";
+import { COLOR_MAP } from "../analyzeColor/baseColors";
 
 interface Props {
   className?: string;

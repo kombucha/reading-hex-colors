@@ -1,15 +1,8 @@
 import React, { useState } from "react";
 import { RouteComponentProps } from "@reach/router";
 
-import {
-  VALID_HEX_COLOR_PATTERN,
-  mapToHue,
-  mapToLightness,
-  mapToSaturation,
-  parseHexColor,
-  expandColor,
-  shorthandColor
-} from "../../utils";
+import { VALID_HEX_COLOR_PATTERN } from "../../analyzeColor/validateColor";
+import analyzeColor from "../../analyzeColor";
 import ColorChart from "../ColorChart";
 import LargeInput from "../base/LargeInput";
 import ColorShorthand from "../ColorShorthand";
@@ -31,23 +24,15 @@ type Props = RouteComponentProps;
 const formatSingleDigitComponent = (component: number) => component.toString(16)[0].toUpperCase();
 
 function Learn(_props: Props) {
-  const [colorInput, setColorInput] = useState("#AA22DD");
+  const [colorModel, setColorModel] = useState(analyzeColor("#AA22DD"));
+  const [r, g, b] = colorModel.rgb;
+
   const onChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = evt.target.value;
     if (!newValue || newValue.match(/^#?[a-f0-9]{0,6}$/i)) {
-      setColorInput(evt.target.value);
+      setColorModel(analyzeColor(newValue));
     }
   };
-  const expandedValue = expandColor(colorInput);
-  const shorthandValue = shorthandColor(colorInput);
-
-  const [r, g, b] = parseHexColor(shorthandValue);
-  const hue = mapToHue(shorthandValue) || { name: "unknown" };
-  const lightness = mapToLightness(shorthandValue);
-  const saturation = mapToSaturation(shorthandValue);
-
-  const doesSaturationMatter = r !== g || g !== b;
-  const doesLightnessMatter = hue.name !== "white" && hue.name !== "black";
 
   return (
     <>
@@ -71,7 +56,7 @@ function Learn(_props: Props) {
         <div className={styles.colorContainer}>
           <LargeInput
             className={styles.colorInput}
-            value={colorInput}
+            value={colorModel.originalInput}
             onChange={onChange}
             autoFocus
             pattern={VALID_HEX_COLOR_PATTERN}
@@ -79,7 +64,7 @@ function Learn(_props: Props) {
             minLength={4}
             maxLength={7}
           />
-          <ColorChart color={shorthandValue} size={64} />
+          <ColorChart color={colorModel} size={64} />
         </div>
 
         <Section
@@ -101,7 +86,7 @@ function Learn(_props: Props) {
               </p>
             </>
           }
-          widget={<DissectedColor color={expandedValue} />}
+          widget={<DissectedColor color={colorModel} />}
         />
 
         <Section
@@ -122,7 +107,7 @@ function Learn(_props: Props) {
               </p>
             </>
           }
-          widget={<ColorShorthand color={expandedValue} />}
+          widget={<ColorShorthand expandedColor={colorModel.expanded} />}
         />
 
         <Section
@@ -134,7 +119,7 @@ function Learn(_props: Props) {
               and its relative percentage. This will give you the "shape" of the color.
             </p>
           }
-          widget={<ColorChart color={shorthandValue} />}
+          widget={<ColorChart color={colorModel} />}
         />
 
         <Section
@@ -161,15 +146,15 @@ function Learn(_props: Props) {
                 colors is no easy task, but it is possible with practice 😊.
               </p>
               <p>
-                For the current color, the closest matching hue is <em>{hue.name}</em>.
+                For the current color, the closest matching hue is <em>{colorModel.hue}</em>.
               </p>
             </>
           }
-          widget={<ColorWheel selectedColor={hue.name} maxSize={520} />}
+          widget={<ColorWheel selectedColor={colorModel.hue} maxSize={520} />}
         />
 
         <Section
-          doesntApply={!doesLightnessMatter}
+          doesntApply={!colorModel.isLightnessRelevant}
           title="Step 4: Get the lightness from the total"
           description={
             <p>
@@ -178,11 +163,11 @@ function Learn(_props: Props) {
               Somewhere in the middle? Then it's <em>medium</em>.
             </p>
           }
-          widget={<LightnessWidget color={shorthandValue} />}
+          widget={<LightnessWidget color={colorModel} />}
         />
 
         <Section
-          doesntApply={!doesSaturationMatter}
+          doesntApply={!colorModel.isSaturationRelevant}
           title="Step 5: Get the saturation from the range"
           description={
             <>
@@ -204,12 +189,12 @@ function Learn(_props: Props) {
               </p>
             </>
           }
-          widget={<SaturationWidget color={shorthandValue} />}
+          widget={<SaturationWidget color={colorModel} />}
         />
 
         <Profit />
       </div>
-      <Result color={expandedValue} />
+      <Result color={colorModel} />
     </>
   );
 }

@@ -2,8 +2,10 @@ import React, { useState, useRef } from "react";
 import useComponentSize, { ComponentSize } from "@rehooks/component-size";
 import cn from "classnames";
 
-import { COLOR_MAP } from "../utils";
 import ColorChart from "./ColorChart";
+import analyzeColor from "../analyzeColor";
+import { COLOR_MAP } from "../analyzeColor/baseColors";
+
 import styles from "./ColorWheel.module.css";
 
 interface Props {
@@ -41,7 +43,7 @@ function ColorWheel({ minSize = 300, maxSize = 600, selectedColor = "" }: Props)
 
           return (
             <li className={className} key={color.value} style={style} onMouseOver={setColor} onMouseOut={unsetColor}>
-              <ColorChart color={color.value} size={chartSize} />
+              <ColorChart color={analyzeColor(color.value)} size={chartSize} />
             </li>
           );
         })}
