@@ -23,6 +23,7 @@ import InlineColor from "../InlineColor";
 import LightnessWidget from "../LightnessWidget";
 import SaturationWidget from "../SaturationWidget";
 import CountingInHexTable from "../CountingInHexTable";
+import Result from "../Result";
 
 type Props = RouteComponentProps;
 
@@ -231,6 +232,7 @@ function Learn(_props: Props) {
           }
         />
       </div>
+      <Result color={expandedValue} />
     </>
   );
 }

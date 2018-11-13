@@ -5,7 +5,7 @@
   --text-error-color: #d44;
 
   /* optimal reading width */
-  --content-max-width: 75ch;
+  --content-max-width: 60ch;
 
   --space-xs: 4px;
   --space-s: 8px;
@@ -37,12 +37,12 @@ hr {
 }
 
 p {
-  margin-bottom: var(--space-s);
+  margin-bottom: var(--space-l);
 }
 
 b,
 em {
-  font-weight: 800;
+  font-weight: 500;
 }
 
 code {
