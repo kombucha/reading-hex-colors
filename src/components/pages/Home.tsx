@@ -21,22 +21,19 @@ function Home(_props: Props) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.leftContent}>
+      <div className={styles.mainContent}>
         <h2 className={styles.callOut}>Hey you!</h2>
         <h1 className={styles.title}>Can you read hex colors?</h1>
-        <ul className={styles.list}>
-          <li>
-            <ButtonLink to="train" inverted>
-              Take the test
-            </ButtonLink>
-          </li>
-          <li>
-            <ButtonLink to="learn">Learn more</ButtonLink>
-          </li>
-          <li>⚠️ WIP️️ ⚠️</li>
-        </ul>
+        <div>
+          <ButtonLink className={styles.trainLink} to="train">
+            Yeah, take the test!
+          </ButtonLink>
+          <ButtonLink className={styles.learnLink} to="learn" inverted>
+            Nope, learn more
+          </ButtonLink>
+        </div>
       </div>
-      <div className={styles.rightContent} style={{ background: color }}>
+      <div className={styles.colorContent} style={{ background: color }}>
         <span className={styles.currentColor}>{color}</span>
       </div>
     </div>

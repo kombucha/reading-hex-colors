@@ -1,25 +1,30 @@
 .container {
+  --container-flex-direction: row;
+  --content-margin: 64px;
+  --main-content-min-width: 612px;
+  --title-font-size: 64px;
+  --links-display: inline-block;
+
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: var(--container-flex-direction);
 }
 
-.leftContent,
-.rightContent {
+.mainContent,
+.colorContent {
   flex: 1;
-  padding: 64px;
-  overflow: hidden;
-  min-width: 600px;
+  padding: var(--content-margin);
 }
 
-.leftContent {
+.mainContent {
+  min-width: var(--main-content-min-width);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.rightContent {
+.colorContent {
   text-align: right;
   transition: background 500ms ease-in-out;
 }
@@ -27,11 +32,11 @@
 .callOut {
   font-size: 20px;
   color: var(--text-muted-color);
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .title {
-  font-size: 64px;
+  font-size: var(--title-font-size);
   margin-bottom: 64px;
   line-height: 1;
 }
@@ -41,12 +46,33 @@
   text-transform: uppercase;
 }
 
-.list {
-  list-style: none;
-  margin: 0;
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 32px;
-  justify-content: start;
-  align-items: center;
+.learnLink,
+.trainLink {
+  display: var(--links-display);
+}
+
+.learnLink {
+  margin-left: 32px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    --container-flex-direction: column;
+    --content-margin: 32px;
+    --title-font-size: 48px;
+    --main-content-min-width: 0;
+    --links-display: block;
+  }
+
+  .mainContent {
+    min-height: 560px;
+  }
+
+  .trainLink {
+    margin-bottom: 32px;
+  }
+
+  .learnLink {
+    margin: 0;
+  }
 }

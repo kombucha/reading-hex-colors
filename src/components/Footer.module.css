@@ -1,4 +1,11 @@
 .container {
+  /* max-width: var(--content-max-width);
+  margin: 0 auto;
+  text-align: center;
+  padding: 32px; */
+}
+
+.content {
   max-width: var(--content-max-width);
   margin: 0 auto;
   text-align: center;
