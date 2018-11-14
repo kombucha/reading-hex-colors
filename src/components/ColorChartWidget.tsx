@@ -4,12 +4,14 @@ import { ColorModel } from "../utils/types";
 import ColorChart from "./ColorChart";
 import ColorCard from "./ColorCard";
 
+import styles from "./ColorChartWidget.module.css";
+
 interface Props {
   color: ColorModel;
 }
 
 const ColorChartWidget: React.SFC<Props> = ({ color }) => (
-  <ColorCard colorModel={color}>
+  <ColorCard className={styles.container} colorModel={color}>
     <ColorChart color={color} />
   </ColorCard>
 );
