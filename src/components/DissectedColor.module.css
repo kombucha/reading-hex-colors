@@ -6,6 +6,7 @@
   gap: 16px;
   font-size: 64px;
   cursor: pointer;
+  user-select: none;
 }
 
 .itemRed,
