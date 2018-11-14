@@ -49,7 +49,6 @@ function Learn(_props: Props) {
             <br />
             Here's how you count in base 16:
           </p>
-          <br />
           <CountingInHexTable />
           <br />
           <p>

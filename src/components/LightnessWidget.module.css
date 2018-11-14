@@ -3,4 +3,6 @@
   grid-gap: var(--space-l);
   min-width: 224px;
   text-align: center;
+  align-items: center;
+  justify-items: center;
 }

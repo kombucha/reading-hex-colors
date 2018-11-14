@@ -3,12 +3,10 @@ import cn from "classnames";
 
 import styles from "./Card.module.css";
 
-interface Props {
-  className?: string;
-}
+interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
-const Card: React.SFC<Props> = ({ className, children }) => (
-  <div className={cn(styles.card, className)}>{children}</div>
-);
+const Card = React.forwardRef<HTMLDivElement, Props>(({ className, ...rest }, ref) => (
+  <div {...rest} ref={ref} className={cn(styles.card, className)} />
+));
 
 export default Card;
