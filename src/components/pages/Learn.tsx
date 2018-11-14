@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { RouteComponentProps } from "@reach/router";
 
-import { VALID_HEX_COLOR_PATTERN } from "../../utils/validateColor";
 import analyzeColor from "../../utils/analyzeColor";
 import ColorChart from "../ColorChart";
-import LargeInput from "../base/LargeInput";
 import ColorShorthand from "../ColorShorthand";
 import ColorWheel from "../ColorWheel";
 import DissectedColor from "../DissectedColor";
@@ -18,6 +16,7 @@ import SaturationWidget from "../SaturationWidget";
 import CountingInHexTable from "../CountingInHexTable";
 import Result from "../Result";
 import Profit from "../Profit";
+import ColorInputWidget from "../ColorInputWidget";
 
 type Props = RouteComponentProps;
 
@@ -26,13 +25,6 @@ const formatSingleDigitComponent = (component: number) => component.toString(16)
 function Learn(_props: Props) {
   const [colorModel, setColorModel] = useState(analyzeColor("#AA22DD"));
   const [r, g, b] = colorModel.rgb;
-
-  const onChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = evt.target.value;
-    if (!newValue || newValue.match(/^#?[a-f0-9]{0,6}$/i)) {
-      setColorModel(analyzeColor(newValue));
-    }
-  };
 
   return (
     <>
@@ -46,19 +38,8 @@ function Learn(_props: Props) {
             <ExternalLink href="https://www.dotcss.io/">dotCSS 2018</ExternalLink>.
           </p>
           <p>Let's start! Pick a color or keep the default one.</p>
-          <div className={styles.colorContainer}>
-            <LargeInput
-              className={styles.colorInput}
-              value={colorModel.originalInput}
-              onChange={onChange}
-              autoFocus
-              pattern={VALID_HEX_COLOR_PATTERN}
-              placeholder="#000000"
-              minLength={4}
-              maxLength={7}
-            />
-            <ColorChart color={colorModel} size={64} />
-          </div>
+
+          <ColorInputWidget color={colorModel} onChange={setColorModel} />
         </Section>
 
         <Section title="Anatomy of a hex color">

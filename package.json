@@ -16,6 +16,7 @@
     "@types/react-dom": "16.0.9",
     "@types/react-transition-group": "2.0.14",
     "classnames": "2.2.6",
+    "intersection-observer": "^0.5.1",
     "mem": "4.0.0",
     "react": "16.7.0-alpha.0 - next",
     "react-dom": "16.7.0-alpha.0 - next",

@@ -10,6 +10,7 @@
   grid-auto-flow: column;
   gap: var(--space-xs);
   padding: var(--space-s);
+  justify-items: center;
 }
 
 .bar {

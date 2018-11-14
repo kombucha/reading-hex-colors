@@ -1,3 +1,4 @@
+import "intersection-observer";
 import ResizeObserver from "resize-observer-polyfill";
 
 import React from "react";
