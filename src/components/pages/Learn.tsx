@@ -77,9 +77,10 @@ function Learn(_props: Props) {
 
         <Section step={2} title="Build a mental chart">
           <p>
-            You now have 3 digits to play with (red: <code>{r}</code>, green: <code>{g}</code> and blue:{" "}
-            <code>{b}</code>). The goal is to build a mental bar chart with 3 bars. Each bar represents a component and
-            its relative percentage. This will give you the "shape" of the color.
+            You now have 3 simple hex digits to play with. You can refer to the table above if you want to convert back
+            to base 10, but the idea is not so much to focus on their precise value. The objective is to build a mental
+            bar chart with 3 bars. Each bar represents a component and its relative percentage. This will give you the
+            "shape" of the color.
           </p>
           <ColorChartWidget color={colorModel} />
         </Section>
