@@ -14,7 +14,7 @@ interface Props {
   selectedColor?: string;
 }
 
-function ColorWheel({ minSize = 300, maxSize = 600, selectedColor = "" }: Props) {
+function ColorWheel({ minSize = 200, maxSize = 600, selectedColor = "" }: Props) {
   const [hoveredColor, setHoveredColor] = useState("");
   const ref = useRef(null);
   const { width: computedSize = minSize } = (useComponentSize as (ref: any) => ComponentSize)(ref);

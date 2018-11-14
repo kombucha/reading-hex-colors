@@ -4,3 +4,9 @@
   background: #000;
   border-radius: 6px;
 }
+
+@media only screen and (max-width: 480px) {
+  .card {
+    padding: 48px 24px;
+  }
+}
