@@ -1,10 +1,16 @@
-.doesntApply {
-  opacity: 0.3;
-}
-
 .title {
   font-size: var(--font-size-l);
   font-weight: 600;
   margin-bottom: var(--space-m);
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.48);
+}
+
+.stepNumber {
+  font-size: 20px;
+  color: var(--text-muted-color);
+  margin-bottom: 24px;
+}
+
+.dimmed {
+  opacity: 0.3;
 }

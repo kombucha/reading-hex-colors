@@ -3,20 +3,17 @@ import React from "react";
 import styles from "./Section.module.css";
 
 interface Props {
+  step?: number;
   title: string;
-  description: React.ReactNode;
-  widget?: React.ReactNode;
-  doesntApply?: boolean;
+  dim?: boolean;
 }
 
-const Section: React.SFC<Props> = ({ title, description, widget, doesntApply }) => {
-  return (
-    <div className={doesntApply ? styles.doesntApply : undefined}>
-      <h2 className={styles.title}>{title}</h2>
-      <>{description}</>
-      {widget && <div className={styles.widget}>{widget}</div>}
-    </div>
-  );
-};
+const Section: React.SFC<Props> = ({ step = -1, title, dim, children }) => (
+  <div className={dim ? styles.dimmed : undefined}>
+    {step !== -1 && <h3 className={styles.stepNumber}>Step {step}</h3>}
+    <h2 className={styles.title}>{title}</h2>
+    <div className={styles.content}>{children}</div>
+  </div>
+);
 
 export default Section;
