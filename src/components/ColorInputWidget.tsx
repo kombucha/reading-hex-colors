@@ -31,8 +31,10 @@ const ColorInputWidget: React.SFC<Props> = ({ color, onChange }) => {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useVisibility(ref);
   const backgroundStyle = { background: color.expanded };
+  const shouldBeDark = color.lightness === "light";
 
   const inputProps = {
+    className: shouldBeDark ? styles.colorInputDark : undefined,
     value: color.originalInput,
     onChange: (evt: React.ChangeEvent<HTMLInputElement>) => {
       const newValue = evt.target.value;

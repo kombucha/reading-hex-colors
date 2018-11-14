@@ -43,7 +43,7 @@ function ColorWheel({ minSize = 300, maxSize = 600, selectedColor = "" }: Props)
 
           return (
             <li className={className} key={color.value} style={style} onMouseOver={setColor} onMouseOut={unsetColor}>
-              <ColorChart color={analyzeColor(color.value)} size={chartSize} />
+              <ColorChart color={analyzeColor(color.value)} size={chartSize} theme="dark" />
             </li>
           );
         })}

@@ -6,7 +6,7 @@ export interface ColorModel {
   hsl?: number[];
   hue: string;
   saturation: string;
-  lightness: string;
+  lightness: "dark" | "medium" | "light";
   isSaturationRelevant: boolean;
   isLightnessRelevant: boolean;
 }

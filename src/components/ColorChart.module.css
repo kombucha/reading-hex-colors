@@ -18,7 +18,7 @@
   height: 100%;
   overflow: hidden;
   border-radius: 16px;
-  background: #777;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .value {
@@ -29,5 +29,12 @@
   width: 100%;
   height: 0;
   background: #ddd;
-  transition: height 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+.wrapper.dark .bar {
+  background: rgba(15, 16, 18, 0.4);
+}
+.wrapper.dark .value {
+  background: var(--background-color);
 }

@@ -4,6 +4,7 @@
   justify-content: space-between;
   padding: 48px;
   border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
   transition: background 150ms ease-in-out;
 }
@@ -31,6 +32,7 @@
   background: none;
   padding: 0;
   outline: 0;
+  box-shadow: none;
 
   padding-bottom: 16px;
   color: var(--text-color);
@@ -49,6 +51,13 @@
   border-color: var(--text-error-color);
 }
 
-.colorInput .colorInput::placeholder {
+.colorInput::placeholder {
   color: var(--text-muted-color);
+}
+
+.colorInputDark,
+.colorInputDark:focus,
+.colorInputDark:hover {
+  color: var(--background-color);
+  border-color: var(--background-color);
 }
