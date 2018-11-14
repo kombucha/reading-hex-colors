@@ -15,7 +15,7 @@ const Result: React.SFC<Props> = ({ color }) => {
 
   return (
     <div className={cn(styles.container, shouldBeDark && styles.dark)} style={{ background: expanded }}>
-      <ColorChart color={color} />
+      <ColorChart color={color} showBackground={false} />
       <p>
         {expanded} {isSaturationRelevant || isLightnessRelevant ? "is a " : "is "}
         <em>
