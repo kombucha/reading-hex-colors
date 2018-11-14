@@ -10,3 +10,7 @@
   transition: background 150ms ease-in-out;
   text-align: center;
 }
+
+.container.dark {
+  color: var(--background-color);
+}

@@ -8,7 +8,7 @@ import useVisibility from "./base/useVisibility";
 import { ColorModel } from "../utils/types";
 import analyzeColor from "../utils/analyzeColor";
 import ColorChart from "./ColorChart";
-import Card from "./base/Card";
+import ColorCard from "./ColorCard";
 
 interface Props {
   color: ColorModel;
@@ -46,10 +46,10 @@ const ColorInputWidget: React.SFC<Props> = ({ color, onChange }) => {
 
   return (
     <>
-      <Card ref={ref} className={styles.container} style={backgroundStyle}>
+      <ColorCard ref={ref} className={styles.container} colorModel={color}>
         <ColorInput {...inputProps} autoFocus />
         <ColorChart color={color} showBackground={false} />
-      </Card>
+      </ColorCard>
       {!isVisible &&
         createPortal(
           <div className={styles.stickiedContainer} style={backgroundStyle}>

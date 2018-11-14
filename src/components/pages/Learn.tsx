@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { RouteComponentProps } from "@reach/router";
 
 import analyzeColor from "../../utils/analyzeColor";
-import ColorChart from "../ColorChart";
 import ColorShorthand from "../ColorShorthand";
 import ColorWheel from "../ColorWheel";
 import DissectedColor from "../DissectedColor";
@@ -17,6 +16,7 @@ import CountingInHexTable from "../CountingInHexTable";
 import Result from "../Result";
 import Profit from "../Profit";
 import ColorInputWidget from "../ColorInputWidget";
+import ColorChartWidget from "../ColorChartWidget";
 
 type Props = RouteComponentProps;
 
@@ -81,7 +81,7 @@ function Learn(_props: Props) {
             <code>{b}</code>). The goal is to build a mental bar chart with 3 bars. Each bar represents a component and
             its relative percentage. This will give you the "shape" of the color.
           </p>
-          <ColorChart color={colorModel} />
+          <ColorChartWidget color={colorModel} />
         </Section>
 
         <Section step={3} title="Get the hue from the shape">
