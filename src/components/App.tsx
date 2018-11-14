@@ -20,7 +20,7 @@ function App() {
       <Router>
         <Home path="/" />
         <Learn path="learn" />
-        <Train path="dashboard" />
+        <Train path="train" />
       </Router>
       {/* </FadeTransitionRouter> */}
       <Footer />
