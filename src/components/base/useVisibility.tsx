@@ -6,7 +6,7 @@ const useVisibility = (node: React.RefObject<Element>, options?: IntersectionObs
   useEffect(
     () => {
       const observer = new IntersectionObserver(([entry]) => {
-        // Workaround what seems to be a bug in the polyfill when using thresholds :/
+        // I want visilibity to match the threshold set (ie. it is 'visible' if we're above the threshold of visibility)
         const isIntersecting =
           options && typeof options.threshold === "number"
             ? entry.intersectionRatio > options.threshold
