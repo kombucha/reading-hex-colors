@@ -11,6 +11,7 @@ import ColorCard from "./ColorCard";
 interface Props {
   color: ColorModel;
   onChange: (color: ColorModel) => any;
+  autoFocus?: boolean;
   hover?: boolean;
 }
 
@@ -26,7 +27,7 @@ const ColorInput: React.SFC<React.InputHTMLAttributes<HTMLInputElement>> = ({ cl
   />
 );
 
-const ColorInputWidget = React.forwardRef<HTMLDivElement, Props>(({ color, onChange, hover }, ref) => {
+const ColorInputWidget = React.forwardRef<HTMLDivElement, Props>(({ color, autoFocus, onChange, hover }, ref) => {
   const shouldBeDark = color.lightness === "light";
 
   const containerClass = cn(styles.container, hover && styles.hover);
@@ -44,7 +45,7 @@ const ColorInputWidget = React.forwardRef<HTMLDivElement, Props>(({ color, onCha
 
   return (
     <ColorCard ref={ref} className={containerClass} colorModel={color}>
-      <ColorInput {...inputProps} autoFocus />
+      <ColorInput {...inputProps} autoFocus={autoFocus} />
       <ColorChart color={color} showBackground={false} size={chartSize} />
     </ColorCard>
   );

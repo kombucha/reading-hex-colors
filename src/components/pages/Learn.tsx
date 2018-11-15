@@ -58,7 +58,7 @@ function Learn(_props: Props) {
           </p>
           <p>Let's start! Pick a color or keep the default one.</p>
 
-          <ColorInputWidget ref={staticInputRef} color={colorModel} onChange={setColorModel} />
+          <ColorInputWidget ref={staticInputRef} color={colorModel} onChange={setColorModel} autoFocus />
         </Section>
 
         <Section title="Anatomy of a hex color">
