@@ -1,5 +1,6 @@
 .title {
   font-size: var(--font-size-l);
+  line-height: 1;
   font-weight: 600;
   margin-bottom: var(--space-m);
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.48);
