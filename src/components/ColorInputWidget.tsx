@@ -1,10 +1,8 @@
-import React, { useRef } from "react";
-import { createPortal } from "react-dom";
+import React from "react";
 import cn from "classnames";
 
 import styles from "./ColorInputWidget.module.css";
 import { VALID_HEX_COLOR_PATTERN } from "../utils/validateColor";
-import useVisibility from "./base/useVisibility";
 import { ColorModel } from "../utils/types";
 import analyzeColor from "../utils/analyzeColor";
 import ColorChart from "./ColorChart";
@@ -13,6 +11,7 @@ import ColorCard from "./ColorCard";
 interface Props {
   color: ColorModel;
   onChange: (color: ColorModel) => any;
+  hover?: boolean;
 }
 
 const ColorInput: React.SFC<React.InputHTMLAttributes<HTMLInputElement>> = ({ className, ...otherProps }) => (
@@ -27,14 +26,13 @@ const ColorInput: React.SFC<React.InputHTMLAttributes<HTMLInputElement>> = ({ cl
   />
 );
 
-const ColorInputWidget: React.SFC<Props> = ({ color, onChange }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isVisible = useVisibility(ref);
-  const backgroundStyle = { background: color.expanded };
+const ColorInputWidget = React.forwardRef<HTMLDivElement, Props>(({ color, onChange, hover }, ref) => {
   const shouldBeDark = color.lightness === "light";
 
+  const containerClass = cn(styles.container, hover && styles.hover);
+  const chartSize = hover ? 58 : undefined;
   const inputProps = {
-    className: shouldBeDark ? styles.colorInputDark : undefined,
+    className: cn({ [styles.colorInputDark]: shouldBeDark }),
     value: color.originalInput,
     onChange: (evt: React.ChangeEvent<HTMLInputElement>) => {
       const newValue = evt.target.value;
@@ -45,21 +43,11 @@ const ColorInputWidget: React.SFC<Props> = ({ color, onChange }) => {
   };
 
   return (
-    <>
-      <ColorCard ref={ref} className={styles.container} colorModel={color}>
-        <ColorInput {...inputProps} autoFocus />
-        <ColorChart color={color} showBackground={false} />
-      </ColorCard>
-      {!isVisible &&
-        createPortal(
-          <div className={styles.stickiedContainer} style={backgroundStyle}>
-            <ColorInput {...inputProps} />
-            <ColorChart color={color} showBackground={false} size={58} />
-          </div>,
-          document.body
-        )}
-    </>
+    <ColorCard ref={ref} className={containerClass} colorModel={color}>
+      <ColorInput {...inputProps} autoFocus />
+      <ColorChart color={color} showBackground={false} size={chartSize} />
+    </ColorCard>
   );
-};
+});
 
 export default ColorInputWidget;

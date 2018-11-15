@@ -4,20 +4,11 @@
   justify-content: space-between;
 }
 
-.stickiedContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
+.hover {
   padding: 16px 32px;
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.6), inset 0px -2px 0px rgba(0, 0, 0, 0.1);
-
-  transition: background 150ms ease-in-out;
+  border-radius: 0;
+  height: auto;
 }
 
 .colorInput {

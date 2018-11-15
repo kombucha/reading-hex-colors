@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { RouteComponentProps } from "@reach/router";
 
 import analyzeColor from "../../utils/analyzeColor";
@@ -17,6 +17,7 @@ import Result from "../Result";
 import Profit from "../Profit";
 import ColorInputWidget from "../ColorInputWidget";
 import ColorChartWidget from "../ColorChartWidget";
+import useVisibility from "../base/useVisibility";
 
 type Props = RouteComponentProps;
 
@@ -25,6 +26,11 @@ const formatSingleDigitComponent = (component: number) => component.toString(16)
 function Learn(_props: Props) {
   const [colorModel, setColorModel] = useState(analyzeColor("#AA22DD"));
   const [r, g, b] = colorModel.rgb;
+
+  const staticInputRef = useRef<HTMLDivElement>(null);
+  const isStaticInputVisible = useVisibility(staticInputRef);
+
+  const showHoverInput = !isStaticInputVisible;
 
   return (
     <>
@@ -39,7 +45,7 @@ function Learn(_props: Props) {
           </p>
           <p>Let's start! Pick a color or keep the default one.</p>
 
-          <ColorInputWidget color={colorModel} onChange={setColorModel} />
+          <ColorInputWidget ref={staticInputRef} color={colorModel} onChange={setColorModel} />
         </Section>
 
         <Section title="Anatomy of a hex color">
@@ -143,6 +149,13 @@ function Learn(_props: Props) {
 
         <Profit />
       </div>
+
+      {showHoverInput && (
+        <div className={styles.hoverInputWidget}>
+          <ColorInputWidget color={colorModel} onChange={setColorModel} hover />
+        </div>
+      )}
+
       <Result color={colorModel} />
     </>
   );

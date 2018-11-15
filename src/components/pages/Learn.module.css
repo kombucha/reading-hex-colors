@@ -7,22 +7,9 @@
   padding: var(--space-l);
 }
 
-.colorContainer {
-  position: sticky;
+.hoverInputWidget {
+  position: fixed;
   top: 0;
-  background: var(--background-color);
-  padding: var(--space-m) 0;
-  z-index: 2;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.colorInput {
-  max-width: calc(7ch + 40px);
-}
-
-.profitText {
-  font-size: var(--font-size-l);
+  left: 0;
+  width: 100%;
 }

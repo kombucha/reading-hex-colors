@@ -7,8 +7,8 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   colorModel: ColorModel;
 }
 
-const ColorCard = React.forwardRef<HTMLDivElement, Props>(({ colorModel, ...otherProps }, ref) => (
-  <Card ref={ref} style={{ background: colorModel.expanded }} {...otherProps} />
+const ColorCard = React.forwardRef<HTMLDivElement, Props>(({ colorModel, style, ...otherProps }, ref) => (
+  <Card ref={ref} style={{ ...style, background: colorModel.expanded }} {...otherProps} />
 ));
 
 export default ColorCard;
