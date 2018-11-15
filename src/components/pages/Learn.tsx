@@ -18,10 +18,23 @@ import Profit from "../Profit";
 import ColorInputWidget from "../ColorInputWidget";
 import ColorChartWidget from "../ColorChartWidget";
 import useVisibility from "../base/useVisibility";
+import { CSSTransition } from "react-transition-group";
+import { CSSTransitionProps } from "react-transition-group/CSSTransition";
 
 type Props = RouteComponentProps;
 
 const formatSingleDigitComponent = (component: number) => component.toString(16)[0].toUpperCase();
+
+const inputAnimationProps: CSSTransitionProps = {
+  timeout: 150,
+  unmountOnExit: true,
+  classNames: {
+    enter: styles.inputEnter,
+    enterActive: styles.inputEnterActive,
+    exit: styles.inputExit,
+    exitActive: styles.inputExitActive
+  }
+};
 
 function Learn(_props: Props) {
   const [colorModel, setColorModel] = useState(analyzeColor("#AA22DD"));
@@ -150,11 +163,11 @@ function Learn(_props: Props) {
         <Profit />
       </div>
 
-      {showHoverInput && (
+      <CSSTransition in={showHoverInput} {...inputAnimationProps} unmountOnExit>
         <div className={styles.hoverInputWidget}>
           <ColorInputWidget color={colorModel} onChange={setColorModel} hover />
         </div>
-      )}
+      </CSSTransition>
 
       <Result color={colorModel} />
     </>
