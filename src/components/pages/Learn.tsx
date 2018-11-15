@@ -24,7 +24,7 @@ import { CSSTransitionProps } from "react-transition-group/CSSTransition";
 type Props = RouteComponentProps;
 
 const formatSingleDigitComponent = (component: number) => component.toString(16)[0].toUpperCase();
-
+const resultIntersectionOptions = { threshold: 0.7 };
 const inputAnimationProps: CSSTransitionProps = {
   timeout: 150,
   unmountOnExit: true,
@@ -42,8 +42,10 @@ function Learn(_props: Props) {
 
   const staticInputRef = useRef<HTMLDivElement>(null);
   const isStaticInputVisible = useVisibility(staticInputRef);
+  const resultRef = useRef<HTMLDivElement>(null);
+  const isResultVisible = useVisibility(resultRef, resultIntersectionOptions);
 
-  const showHoverInput = !isStaticInputVisible;
+  const showHoverInput = !isStaticInputVisible && !isResultVisible;
 
   return (
     <>
@@ -169,7 +171,7 @@ function Learn(_props: Props) {
         </div>
       </CSSTransition>
 
-      <Result color={colorModel} />
+      <Result color={colorModel} ref={resultRef} />
     </>
   );
 }

@@ -9,12 +9,12 @@ interface Props {
   color: ColorModel;
 }
 
-const Result: React.SFC<Props> = ({ color }) => {
+const Result = React.forwardRef<HTMLDivElement, Props>(({ color }, ref) => {
   const { isLightnessRelevant, isSaturationRelevant, saturation, lightness, hue, expanded } = color;
   const shouldBeDark = color.lightness === "light";
 
   return (
-    <div className={cn(styles.container, shouldBeDark && styles.dark)} style={{ background: expanded }}>
+    <div ref={ref} className={cn(styles.container, shouldBeDark && styles.dark)} style={{ background: expanded }}>
       <ColorChart color={color} showBackground={false} />
       <p>
         {expanded} {isSaturationRelevant || isLightnessRelevant ? "is a " : "is "}
@@ -24,6 +24,6 @@ const Result: React.SFC<Props> = ({ color }) => {
       </p>
     </div>
   );
-};
+});
 
 export default Result;
