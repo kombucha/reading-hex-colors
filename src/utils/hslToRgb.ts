@@ -10,7 +10,7 @@ const hue = (p: number, q: number, t: number) => {
   return p;
 };
 
-const hslToRgb = (h: number, s: number, l: number) => {
+const hslToRgb = ([h, s, l]: number[]) => {
   let r, g, b;
   h = h / 360;
 

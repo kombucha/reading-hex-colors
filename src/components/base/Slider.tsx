@@ -15,6 +15,7 @@ const Slider: React.SFC<Props> = ({ value, onChange = noOp }) => (
     type="range"
     min={0}
     max={100}
+    step={1}
     value={value * 100}
     onChange={evt => onChange(evt.target.valueAsNumber)}
   />

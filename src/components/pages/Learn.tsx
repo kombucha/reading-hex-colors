@@ -138,7 +138,7 @@ function Learn(_props: Props) {
             a <em>dark</em> color. Close to the maximum possible value? Then it's a <em>light</em> color. Somewhere in
             the middle? Then it's <em>medium</em>.
           </p>
-          <LightnessWidget color={colorModel} />
+          <LightnessWidget color={colorModel} onChange={setColorModel} />
         </Section>
 
         <Section step={5} title="Get the saturation from the range" dim={!colorModel.isSaturationRelevant}>
@@ -159,7 +159,7 @@ function Learn(_props: Props) {
             Finally, if the range is somewhere in between then you've got a <em>washed</em> or <em>muted</em> color.
           </p>
 
-          <SaturationWidget color={colorModel} />
+          <SaturationWidget color={colorModel} onChange={setColorModel} />
         </Section>
 
         <Profit />

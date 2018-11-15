@@ -6,6 +6,6 @@ function rand(min: number, max: number) {
 }
 
 export default function generateRandomNiceColor() {
-  const rgb = hslToRgb(rand(0, 360), rand(0.25, 1), rand(0.3, 0.6));
+  const rgb = hslToRgb([rand(0, 360), rand(0.25, 1), rand(0.3, 0.6)]);
   return expandColor(rgb);
 }
